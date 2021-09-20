@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="titleLabel" min="-2" pref="598" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="geographyDataLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="dateOfBirthLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="telephoneNoLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="faxNoLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="emailLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="ssnLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="medicalRecordNoLabel" alignment="0" pref="221" max="32767" attributes="0"/>
+                          <Component id="healthPlanBeneficiaryNoLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="vehicleIdentifierLabel" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="licenseNoLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="bankAccountNoLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="deviceIdentifierLabel" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="ipAddressLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="linkedInLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="uniqueIdentityLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="biometricIdentifierLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="photoLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="nameLabel" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="geographyDataText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="nameText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="dateOfBirthText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="telephoneNoText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="faxNoText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="emailText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="ssnText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="medicalRecordNoText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="healthPlanNoText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="bankAccountNoText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="licenseNoText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="vehicleIdentifiersText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="deviceIdentifiersText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="ipAddressText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="linkedInText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="biometricIdText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="photoText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                          <Component id="uniqueIdentityText" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="titleLabel" min="-2" pref="42" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="nameText" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="nameLabel" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="geographyDataLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="geographyDataText" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="dateOfBirthLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="dateOfBirthText" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="telephoneNoLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="telephoneNoText" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="faxNoText" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="faxNoLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="emailLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="emailText" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="ssnLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="ssnText" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="medicalRecordNoLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="medicalRecordNoText" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="healthPlanBeneficiaryNoLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="healthPlanNoText" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="bankAccountNoLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="bankAccountNoText" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="licenseNoLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="licenseNoText" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="vehicleIdentifierLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="vehicleIdentifiersText" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="deviceIdentifiersText" alignment="0" max="32767" attributes="0"/>
+                  <Component id="deviceIdentifierLabel" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="linkedInText" alignment="0" max="32767" attributes="0"/>
+                  <Component id="ipAddressLabel" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="ipAddressText" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="linkedInLabel" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="biometricIdText" alignment="0" max="32767" attributes="0"/>
+                  <Component id="photoLabel" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="photoText" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="biometricIdentifierLabel" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="uniqueIdentityLabel" alignment="0" max="32767" attributes="0"/>
+                  <Component id="uniqueIdentityText" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="44" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="titleLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Lucida Grande" size="18" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="View Person"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="faxNoLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Fax No :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="nameLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Name :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="emailLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Email :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="geographyDataLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Geography Data :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="licenseNoLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="License No :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="medicalRecordNoLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Medical Record No :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="dateOfBirthLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Date of Birth :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="telephoneNoLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Telephone No :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="ssnLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="SSN :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="bankAccountNoLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Bank Acc No :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="healthPlanBeneficiaryNoLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Health Plan No :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="vehicleIdentifierLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Vehicle Identifiers :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="geographyDataText">
+    </Component>
+    <Component class="javax.swing.JLabel" name="deviceIdentifierLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Device Identifiers :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="linkedInLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="IP Address :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="ipAddressLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="LinkedIn :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="biometricIdentifierLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Photo :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="photoLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Biometric ID :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="uniqueIdentityLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Unique Identity :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="nameText">
+    </Component>
+    <Component class="javax.swing.JTextField" name="dateOfBirthText">
+    </Component>
+    <Component class="javax.swing.JTextField" name="telephoneNoText">
+    </Component>
+    <Component class="javax.swing.JTextField" name="faxNoText">
+    </Component>
+    <Component class="javax.swing.JTextField" name="emailText">
+    </Component>
+    <Component class="javax.swing.JTextField" name="ssnText">
+    </Component>
+    <Component class="javax.swing.JTextField" name="medicalRecordNoText">
+    </Component>
+    <Component class="javax.swing.JTextField" name="healthPlanNoText">
+    </Component>
+    <Component class="javax.swing.JTextField" name="bankAccountNoText">
+    </Component>
+    <Component class="javax.swing.JTextField" name="licenseNoText">
+    </Component>
+    <Component class="javax.swing.JTextField" name="vehicleIdentifiersText">
+    </Component>
+    <Component class="javax.swing.JTextField" name="deviceIdentifiersText">
+    </Component>
+    <Component class="javax.swing.JTextField" name="linkedInText">
+    </Component>
+    <Component class="javax.swing.JTextField" name="ipAddressText">
+    </Component>
+    <Component class="javax.swing.JTextField" name="biometricIdText">
+    </Component>
+    <Component class="javax.swing.JTextField" name="photoText">
+    </Component>
+    <Component class="javax.swing.JTextField" name="uniqueIdentityText">
+    </Component>
+  </SubComponents>
+</Form>
