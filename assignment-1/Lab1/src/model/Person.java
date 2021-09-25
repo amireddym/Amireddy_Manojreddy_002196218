@@ -20,7 +20,7 @@ public class Person {
     private long telephoneNo;
     private long faxNo;
     private String emailId;
-    private long ssn;
+    private String ssn;
     private long medicalRecordNo;
     private long healthPlanBenficiaryNo;
     private long bankAccountNo;
@@ -80,11 +80,11 @@ public class Person {
         this.emailId = emailId;
     }
 
-    public long getSsn() {
+    public String getSsn() {
         return ssn;
     }
 
-    public void setSsn(long ssn) {
+    public void setSsn(String ssn) {
         this.ssn = ssn;
     }
 

@@ -341,14 +341,14 @@ public class CreateJPanel extends javax.swing.JPanel {
         person.setName(nameTextField.getText());
         person.setGeographicData(geographicDataTextField.getText());
         person.setDob(getDateFromString(dobTextField.getText()));
-        person.setTelephoneNo(Integer.valueOf(telephoneNoTextField.getText()));
-        person.setFaxNo(Integer.valueOf(faxNoTextField.getText()));
+        person.setTelephoneNo(Long.valueOf(telephoneNoTextField.getText()));
+        person.setFaxNo(Long.valueOf(faxNoTextField.getText()));
         person.setEmailId(emailTextField.getText());
-        person.setSsn(Integer.valueOf(ssnTextField.getText()));
-        person.setMedicalRecordNo(Integer.valueOf(medicalRecordTextField.getText()));
-        person.setHealthPlanBenficiaryNo(Integer.valueOf(healthPlanTextField.getText()));
-        person.setBankAccountNo(Integer.valueOf(bankAccountNoTextField.getText()));
-        person.setLicenseNo(Integer.valueOf(licenseNoTextField.getText()));
+        person.setSsn(ssnTextField.getText());
+        person.setMedicalRecordNo(Long.valueOf(medicalRecordTextField.getText()));
+        person.setHealthPlanBenficiaryNo(Long.valueOf(healthPlanTextField.getText()));
+        person.setBankAccountNo(Long.valueOf(bankAccountNoTextField.getText()));
+        person.setLicenseNo(Long.valueOf(licenseNoTextField.getText()));
         person.setVehicleIdentifier(vehicleIdentityTextField.getText());
         person.setDeviceIdentifier(deviceIdentityTextField.getText());
         person.setLinkedIn(linkedInTextField.getText());
@@ -372,11 +372,29 @@ public class CreateJPanel extends javax.swing.JPanel {
     
     private boolean isDataValid(){
         
-        if(isNameValid() && isDobValid() && isTelephoneNoValid() && isFaxNoValid() && 
-                isEmailIdValid() && isSsnValid() && isMedicalRecordNoValid() && 
-                isHealthPlanBenificaryNoValid() && isBankAccountNoValid() && isLicenseNoValid() && 
-                isVehicleIdentifierValid() && isDeviceIdentifierValid() && isLinkedInValid() && 
-                isIpAddressValid() && isBiometricValid()) {
+        System.out.println("Name Validation : " + isNameValid());
+        System.out.println("Dob Validation : " + isDobValid());
+        System.out.println("Telephone Validation : " + isTelephoneNoValid());
+        System.out.println("Telephone Validation Sec : " + isTelephoneNoSecValid());
+        System.out.println("FaxNo validation : " + isFaxNoValid());
+        System.out.println("Email Validation : " + isEmailIdValid());
+        System.out.println("Email Validation Sec : " + isEmailIdSecValid());
+        System.out.println("SSN validation : " + isSsnValid());
+        System.out.println("Medical Validation : " + isMedicalRecordNoValid());
+        System.out.println("Health Plan Validation : " + isHealthPlanBenificaryNoValid());
+        System.out.println("Bank Account Validation : " + isBankAccountNoValid());
+        System.out.println("Vehicle Identity Validation : " + isVehicleIdentifierValid());
+        System.out.println("Device Identity Validation : " + isDeviceIdentifierValid());
+        System.out.println("LinkedIn Validation : " + isLinkedInValid());
+        System.out.println("Ip Address Validation : " + isIpAddressValid());
+        System.out.println("Biometric Validation : " + isBiometricValid());
+        
+        
+        if( isNameValid() && isDobValid() && isTelephoneNoValid() && isTelephoneNoSecValid() && 
+                isFaxNoValid() && isEmailIdValid() && isEmailIdSecValid() && isSsnValid() &&
+                isMedicalRecordNoValid() && isHealthPlanBenificaryNoValid() && isBankAccountNoValid() &&
+                isVehicleIdentifierValid() && isDeviceIdentifierValid() && isLinkedInValid() &&
+                isIpAddressValid() && isBiometricValid() ) {
             
             return true;
         }
@@ -394,12 +412,14 @@ public class CreateJPanel extends javax.swing.JPanel {
     
     private boolean isIpAddressValid() {
         String ipAddress = ipAddressTextField.getText();
+        System.out.println(ipAddress);
         ipAddress = ipAddress.replaceAll(" ", "");
-        if(ipAddress.length()>15 || ipAddress.contentEquals("000.000.000.000")){
+        if(ipAddress.length()!=15 || ipAddress.contentEquals("000.000.000.000")){
             return false;
         }
-        String[] ipAddressSplit  = ipAddress.split(".");
-        if(ipAddressSplit.length == 4){
+        String[] ipAddressSplit  = ipAddress.split("\\.");
+        System.out.println(ipAddressSplit.length);
+        if(ipAddressSplit.length == 4) {
             
             try {
                 int ip1 = Integer.parseInt(ipAddressSplit[0]);
@@ -407,21 +427,32 @@ public class CreateJPanel extends javax.swing.JPanel {
                 int ip3 = Integer.parseInt(ipAddressSplit[2]);
                 int ip4 = Integer.parseInt(ipAddressSplit[3]);
                 
+                System.err.println(ip1);
+                System.err.println(ip2);
+                System.err.println(ip3);
+                System.err.println(ip4);
+                
+                
                 if(ip1> 255 || ip2 > 255 || ip3 > 255 || ip4 > 255){
                     return false;
                 }
+                return true;
                      
             }catch (Exception e) {
                 return false;
             }
             
         }
-        return true;
+        return false;
     }
     
     private boolean isLinkedInValid() {
         
-        String linkedInUrl = "https://www.linkedin.com/" + licenseNoTextField.getText().replace(" ", "");
+//        if(linkedInTextField.getText().isBlank()){
+//            return false;
+//        }
+        
+        String linkedInUrl = "https://www.linkedin.com/" + linkedInTextField.getText().replace(" ", "");
         
         try {
             new URL(linkedInUrl).openStream().close();
@@ -462,7 +493,7 @@ public class CreateJPanel extends javax.swing.JPanel {
     }
     
     private boolean isSsnValid() {
-        
+                
         String ssnRegex = "^(?!666|000|9\\d{2})\\d{3}-(?!00)\\d{2}-(?!0{4})\\d{4}$";
         Pattern p = Pattern.compile(ssnRegex);
         Matcher matcher = p.matcher(ssnTextField.getText());
@@ -471,8 +502,20 @@ public class CreateJPanel extends javax.swing.JPanel {
     
     private boolean isEmailIdValid() {
         
+        if(emailTextField.getText().isBlank()){
+            return false;
+        }
         String emailRegex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
         return emailTextField.getText().matches(emailRegex);
+    }
+    
+        private boolean isEmailIdSecValid() {
+        
+        if(emailTextSecField.getText().isBlank()){
+            return false;
+        }
+        String emailRegex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        return emailTextSecField.getText().matches(emailRegex);
     }
     
     private boolean isFaxNoValid() {
@@ -483,7 +526,7 @@ public class CreateJPanel extends javax.swing.JPanel {
             return false;
         }
         try {
-            Integer.parseInt(telephoneNo);
+            Long.valueOf(telephoneNo);
             return true;
         } catch (Exception e) {
             return false;
@@ -498,7 +541,12 @@ public class CreateJPanel extends javax.swing.JPanel {
         
         Date date = null;
         try {
-           date = new SimpleDateFormat("dd/MM/yyy").parse(dobTextField.getText().replace(" ", ""));
+           date = new SimpleDateFormat("dd/MM/yyyy").parse(dobTextField.getText().replace(" ", ""));
+           System.err.println(date);
+           if(date.after(new Date())){
+               return false;
+           }
+           
         }catch (Exception e) {
             System.out.println(e.getMessage());
             return false;
@@ -514,7 +562,22 @@ public class CreateJPanel extends javax.swing.JPanel {
             return false;
         }
         try {
-            Integer.parseInt(telephoneNo);
+            Long.valueOf(telephoneNo);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    
+        private boolean isTelephoneNoSecValid() {
+        
+        String telephoneNo = telephoneNoSecTextField.getText();
+        telephoneNo = telephoneNo.replace(" ", "");
+        if(telephoneNo.length()!=10){
+            return false;
+        }
+        try {
+            Long.valueOf(telephoneNo);
             return true;
         } catch (Exception e) {
             return false;
