@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="geographicDataJLabel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="nameJLabel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="dobJLabel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="telephoneNoJLabel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="emailAddressJLabel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="ssnJLabel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="medicalRecordJLabel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="telephoneNoSecJLabel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="emailAddressSecJLabel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="healthPlanJLabel" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="photoLabel" min="-2" pref="134" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="createJLabel" min="-2" pref="518" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Component id="nameTextField" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                              <Component id="geographicDataTextField" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                              <Component id="dobTextField" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                              <Component id="emailTextField" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                              <Component id="ssnTextField" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                              <Component id="medicalRecordTextField" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="telephoneNoTextField" alignment="1" min="-2" pref="273" max="-2" attributes="0"/>
+                          <Component id="telephoneNoSecTextField" min="-2" pref="273" max="-2" attributes="0"/>
+                          <Component id="emailTextSecField" min="-2" pref="273" max="-2" attributes="0"/>
+                          <Component id="healthPlanTextField" min="-2" pref="273" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="bankAccountNoJLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="licenseNoJLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="vehicleIdentityJLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="deviceIdentityJLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="linkedInJLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="ipAddressJLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="uniqueIdentityJLabel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="biometricsJLabel1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="faxNoJLabel" max="32767" attributes="0"/>
+                          <Component id="bankAccountNoSecJLabel" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="faxNoTextField" min="-2" pref="273" max="-2" attributes="0"/>
+                          <Component id="bankAccountNoTextField" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                          <Component id="licenseNoTextField" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                          <Component id="vehicleIdentityTextField" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                          <Component id="deviceIdentityTextField" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                          <Component id="linkedInTextField" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                          <Component id="ipAddressTextField" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                          <Component id="uniqueIdentityTextField" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                          <Component id="biometricsTextField" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                          <Component id="bankAccountNoSecTextField" min="-2" pref="273" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="146" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                      <Component id="createJLabel" min="-2" pref="37" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="photoLabel" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="nameJLabel" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="nameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="geographicDataJLabel" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="geographicDataTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bankAccountNoSecJLabel" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="dobJLabel" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="dobTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="telephoneNoJLabel" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="telephoneNoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="telephoneNoSecJLabel" min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="emailAddressJLabel" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="emailTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="emailAddressSecJLabel" min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="medicalRecordJLabel" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="medicalRecordTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="licenseNoJLabel" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="faxNoJLabel" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="healthPlanTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="healthPlanJLabel" alignment="1" min="-2" pref="24" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="bankAccountNoJLabel" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="bankAccountNoTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="bankAccountNoSecTextField" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="vehicleIdentityJLabel" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="vehicleIdentityTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="deviceIdentityJLabel" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="deviceIdentityTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="linkedInJLabel" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="linkedInTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="telephoneNoSecTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="ipAddressJLabel" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="ipAddressTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="uniqueIdentityJLabel" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="uniqueIdentityTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="emailTextSecField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="licenseNoTextField" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="faxNoTextField" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="ssnTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="biometricsJLabel1" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="ssnJLabel" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
+                  <Component id="biometricsTextField" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="65" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JTextField" name="dobTextField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="telephoneNoTextField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="faxNoTextField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="emailTextField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="ssnTextField">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ssnTextFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="medicalRecordTextField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="healthPlanTextField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="bankAccountNoTextField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="licenseNoTextField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="vehicleIdentityTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="medicalRecordJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Medical Record No :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="deviceIdentityTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="healthPlanJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Health Plan No :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="linkedInTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="bankAccountNoJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Bank Account(Pri) :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="ipAddressTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="licenseNoJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="License No :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="uniqueIdentityTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="vehicleIdentityJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Vehicle Identity :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="biometricsTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="deviceIdentityJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Device Identity :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="linkedInJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="LinkedIn :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="photoLabel">
+    </Component>
+    <Component class="javax.swing.JLabel" name="ipAddressJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Ip Address :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="uniqueIdentityJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Unique Identity :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="biometricsJLabel1">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="BioMetrics :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="createJLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Lucida Grande" size="18" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="View Person"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="nameJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Name :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="geographicDataJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Geographic Data :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="dobJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Date of Birth :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="telephoneNoJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Telephone No(Pri):"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="faxNoJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="FAX No  :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="emailAddressJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Email Address(Pri) :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="ssnJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="SSN :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="nameTextField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="geographicDataTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="telephoneNoSecJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Telephone No(Sec):"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="telephoneNoSecTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="emailAddressSecJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Email Address(Sec) :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="emailTextSecField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="bankAccountNoSecJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Bank Account(Sec) :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="bankAccountNoSecTextField">
+    </Component>
+  </SubComponents>
+</Form>
