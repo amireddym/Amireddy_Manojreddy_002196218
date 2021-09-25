@@ -342,12 +342,15 @@ public class CreateJPanel extends javax.swing.JPanel {
         person.setGeographicData(geographicDataTextField.getText());
         person.setDob(getDateFromString(dobTextField.getText()));
         person.setTelephoneNo(Long.valueOf(telephoneNoTextField.getText()));
+        person.setTelephoneNoSec(Long.valueOf(telephoneNoSecTextField.getText()));
         person.setFaxNo(Long.valueOf(faxNoTextField.getText()));
         person.setEmailId(emailTextField.getText());
+        person.setEmailIdSec(emailTextSecField.getText());
         person.setSsn(ssnTextField.getText());
         person.setMedicalRecordNo(Long.valueOf(medicalRecordTextField.getText()));
         person.setHealthPlanBenficiaryNo(Long.valueOf(healthPlanTextField.getText()));
         person.setBankAccountNo(Long.valueOf(bankAccountNoTextField.getText()));
+        person.setBankAccountNoSec(Long.valueOf(bankAccountNoSecTextField.getText()));
         person.setLicenseNo(Long.valueOf(licenseNoTextField.getText()));
         person.setVehicleIdentifier(vehicleIdentityTextField.getText());
         person.setDeviceIdentifier(deviceIdentityTextField.getText());

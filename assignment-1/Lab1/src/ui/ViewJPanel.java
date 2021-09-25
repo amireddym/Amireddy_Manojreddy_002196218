@@ -6,6 +6,7 @@
 package ui;
 
 import java.awt.Image;
+import java.text.SimpleDateFormat;
 import javax.swing.ImageIcon;
 import model.Person;
 
@@ -29,6 +30,25 @@ public class ViewJPanel extends javax.swing.JPanel {
     private void display(Person person){
         
         nameTextField.setText(person.getName());
+        geographicDataTextField.setText(person.getGeographicData());
+        dobTextField.setText(new SimpleDateFormat("dd/MM/yyyy").format(person.getDob()));
+        telephoneNoTextField.setText(String.valueOf(person.getTelephoneNo()));
+        telephoneNoSecTextField.setText(String.valueOf(person.getTelephoneNoSec()));
+        faxNoTextField.setText(String.valueOf(person.getFaxNo()));
+        emailTextField.setText(person.getEmailId());
+        emailTextSecField.setText(person.getEmailIdSec());
+        ipAddressTextField.setText(person.getIpAddress());
+        medicalRecordTextField.setText(String.valueOf(person.getMedicalRecordNo()));
+        healthPlanTextField.setText(String.valueOf(person.getHealthPlanBenficiaryNo()));
+        ssnTextField.setText(person.getSsn());
+        bankAccountNoTextField.setText(String.valueOf(person.getBankAccountNo()));
+        bankAccountNoSecTextField.setText(String.valueOf(person.getBankAccountNoSec()));
+        vehicleIdentityTextField.setText(person.getVehicleIdentifier());
+        deviceIdentityTextField.setText(person.getDeviceIdentifier());
+        linkedInTextField.setText(person.getLinkedIn());
+        licenseNoTextField.setText(String.valueOf(person.getLicenseNo()));
+        uniqueIdentityTextField.setText(person.getUniqueNo());
+        biometricsTextField.setText(person.getBiometric());
         
         setPhoto();
         

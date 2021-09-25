@@ -18,12 +18,15 @@ public class Person {
     private String geographicData;
     private Date dob;
     private long telephoneNo;
+    private long telephoneNoSec;
     private long faxNo;
     private String emailId;
+    private String emailIdSec;
     private String ssn;
     private long medicalRecordNo;
     private long healthPlanBenficiaryNo;
     private long bankAccountNo;
+    private long bankAccountNoSec;
     private long licenseNo;
     private String vehicleIdentifier;
     private String deviceIdentifier;
@@ -166,6 +169,30 @@ public class Person {
 
     public void setUniqueNo(String uniqueNo) {
         this.uniqueNo = uniqueNo;
+    }
+
+    public long getTelephoneNoSec() {
+        return telephoneNoSec;
+    }
+
+    public void setTelephoneNoSec(long telephoneNoSec) {
+        this.telephoneNoSec = telephoneNoSec;
+    }
+
+    public String getEmailIdSec() {
+        return emailIdSec;
+    }
+
+    public void setEmailIdSec(String emailIdSec) {
+        this.emailIdSec = emailIdSec;
+    }
+
+    public long getBankAccountNoSec() {
+        return bankAccountNoSec;
+    }
+
+    public void setBankAccountNoSec(long bankAccountNoSec) {
+        this.bankAccountNoSec = bankAccountNoSec;
     }
 
 }
