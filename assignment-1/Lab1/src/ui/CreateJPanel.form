@@ -20,17 +20,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="477" max="-2" attributes="0"/>
-                              <Component id="SaveBtn" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="createJLabel" min="-2" pref="518" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-                              <Component id="photoLabel" min="-2" pref="134" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="createJLabel" min="-2" pref="518" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="photoLabel" min="-2" pref="134" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
@@ -92,6 +84,10 @@
                               </Group>
                           </Group>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="520" max="-2" attributes="0"/>
+                      <Component id="SaveBtn" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="164" max="32767" attributes="0"/>
@@ -207,9 +203,9 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="uploadJBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="61" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="SaveBtn" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace pref="49" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -285,6 +281,12 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="telephoneNoSecTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="10 digit number only (Optional)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="telephoneNoSecTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="emailAddressSecJLabel">
       <Properties>
@@ -293,6 +295,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="emailTextSecField">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="emailTextSecFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="bankAccountNoSecJLabel">
       <Properties>
@@ -301,6 +306,12 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="bankAccountNoSecTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Only Numbers Accepted (Optional)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="bankAccountNoSecTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="geographicDataJLabel">
       <Properties>
@@ -315,6 +326,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="licenseNoTextField">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="licenseNoTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="telephoneNoJLabel">
       <Properties>
@@ -323,6 +337,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="vehicleIdentityTextField">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="vehicleIdentityTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="faxNoJLabel">
       <Properties>
@@ -343,6 +360,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="deviceIdentityTextField">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="deviceIdentityTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="ssnJLabel">
       <Properties>
@@ -357,6 +377,12 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="nameTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Only Alphabets and Spaces"/>
+      </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nameTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="linkedInTextField">
     </Component>
@@ -369,6 +395,12 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="ipAddressTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="xxx.xxx.xxx.xxx format only"/>
+      </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="ipAddressTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="licenseNoJLabel">
       <Properties>
@@ -379,23 +411,62 @@
     <Component class="javax.swing.JTextField" name="uniqueIdentityTextField">
     </Component>
     <Component class="javax.swing.JTextField" name="dobTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="dd/MM/yyyy  Format Only"/>
+      </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="dobTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="telephoneNoTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="10 digit number only"/>
+      </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="telephoneNoTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="faxNoTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="10 digit number only"/>
+      </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="faxNoTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="emailTextField">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="emailTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="ssnTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="xxx-xx-xxxx Format"/>
+      </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ssnTextFieldActionPerformed"/>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="ssnTextFieldKeyReleased"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="medicalRecordTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Only Numbers Accepted"/>
+      </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="medicalRecordTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="healthPlanTextField">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="healthPlanTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="bankAccountNoTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Only numbers accepted"/>
+      </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="bankAccountNoTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="vehicleIdentityJLabel">
       <Properties>
@@ -404,6 +475,12 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="biometricsTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="make sure file exists"/>
+      </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="biometricsTextFieldKeyReleased"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

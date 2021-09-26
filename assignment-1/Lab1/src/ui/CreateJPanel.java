@@ -5,6 +5,7 @@
  */
 package ui;
 
+import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
 import java.net.URL;
@@ -126,11 +127,31 @@ public class CreateJPanel extends javax.swing.JPanel {
         telephoneNoSecJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         telephoneNoSecJLabel.setText("Telephone No(Sec):");
 
+        telephoneNoSecTextField.setToolTipText("10 digit number only (Optional)");
+        telephoneNoSecTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                telephoneNoSecTextFieldKeyReleased(evt);
+            }
+        });
+
         emailAddressSecJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         emailAddressSecJLabel.setText("Email Address(Sec) :");
 
+        emailTextSecField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                emailTextSecFieldKeyReleased(evt);
+            }
+        });
+
         bankAccountNoSecJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         bankAccountNoSecJLabel.setText("Bank Account(Sec) :");
+
+        bankAccountNoSecTextField.setToolTipText("Only Numbers Accepted (Optional)");
+        bankAccountNoSecTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                bankAccountNoSecTextFieldKeyReleased(evt);
+            }
+        });
 
         geographicDataJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         geographicDataJLabel.setText("Geographic Data :");
@@ -138,8 +159,20 @@ public class CreateJPanel extends javax.swing.JPanel {
         dobJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dobJLabel.setText("Date of Birth :");
 
+        licenseNoTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                licenseNoTextFieldKeyReleased(evt);
+            }
+        });
+
         telephoneNoJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         telephoneNoJLabel.setText("Telephone No(Pri):");
+
+        vehicleIdentityTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                vehicleIdentityTextFieldKeyReleased(evt);
+            }
+        });
 
         faxNoJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         faxNoJLabel.setText("FAX No  :");
@@ -150,26 +183,101 @@ public class CreateJPanel extends javax.swing.JPanel {
         emailAddressJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         emailAddressJLabel.setText("Email Address(Pri) :");
 
+        deviceIdentityTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                deviceIdentityTextFieldKeyReleased(evt);
+            }
+        });
+
         ssnJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         ssnJLabel.setText("SSN :");
 
         healthPlanJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         healthPlanJLabel.setText("Health Plan No :");
 
+        nameTextField.setToolTipText("Only Alphabets and Spaces");
+        nameTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nameTextFieldKeyReleased(evt);
+            }
+        });
+
         bankAccountNoJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         bankAccountNoJLabel.setText("Bank Account(Pri) :");
+
+        ipAddressTextField.setToolTipText("xxx.xxx.xxx.xxx format only");
+        ipAddressTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ipAddressTextFieldKeyReleased(evt);
+            }
+        });
 
         licenseNoJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         licenseNoJLabel.setText("License No :");
 
-        ssnTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ssnTextFieldActionPerformed(evt);
+        dobTextField.setToolTipText("dd/MM/yyyy  Format Only");
+        dobTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                dobTextFieldKeyReleased(evt);
+            }
+        });
+
+        telephoneNoTextField.setToolTipText("10 digit number only");
+        telephoneNoTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                telephoneNoTextFieldKeyReleased(evt);
+            }
+        });
+
+        faxNoTextField.setToolTipText("10 digit number only");
+        faxNoTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                faxNoTextFieldKeyReleased(evt);
+            }
+        });
+
+        emailTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                emailTextFieldKeyReleased(evt);
+            }
+        });
+
+        ssnTextField.setToolTipText("xxx-xx-xxxx Format");
+        ssnTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ssnTextFieldKeyReleased(evt);
+            }
+        });
+
+        medicalRecordTextField.setToolTipText("Only Numbers Accepted");
+        medicalRecordTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                medicalRecordTextFieldKeyReleased(evt);
+            }
+        });
+
+        healthPlanTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                healthPlanTextFieldKeyReleased(evt);
+            }
+        });
+
+        bankAccountNoTextField.setToolTipText("Only numbers accepted");
+        bankAccountNoTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                bankAccountNoTextFieldKeyReleased(evt);
             }
         });
 
         vehicleIdentityJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         vehicleIdentityJLabel.setText("Vehicle Identity :");
+
+        biometricsTextField.setToolTipText("make sure file exists");
+        biometricsTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                biometricsTextFieldKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -179,14 +287,9 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(477, 477, 477)
-                                .addComponent(SaveBtn))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(createJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 518, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(105, 105, 105)
-                                .addComponent(photoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(createJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 518, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(105, 105, 105)
+                        .addComponent(photoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(92, 92, 92)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -239,7 +342,10 @@ public class CreateJPanel extends javax.swing.JPanel {
                                     .addComponent(ipAddressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(uniqueIdentityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(biometricsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(bankAccountNoSecTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                    .addComponent(bankAccountNoSecTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(520, 520, 520)
+                        .addComponent(SaveBtn)))
                 .addContainerGap(164, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -330,9 +436,9 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(biometricsTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(uploadJBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(SaveBtn)
-                .addContainerGap())
+                .addContainerGap(49, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -342,7 +448,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         person.setGeographicData(geographicDataTextField.getText());
         person.setDob(getDateFromString(dobTextField.getText()));
         person.setTelephoneNo(Long.valueOf(telephoneNoTextField.getText()));
-        person.setTelephoneNoSec(Long.valueOf(telephoneNoSecTextField.getText()));
+        person.setTelephoneNoSec(telephoneNoSecTextField.getText().isBlank()?0:Long.valueOf(telephoneNoSecTextField.getText()));
         person.setFaxNo(Long.valueOf(faxNoTextField.getText()));
         person.setEmailId(emailTextField.getText());
         person.setEmailIdSec(emailTextSecField.getText());
@@ -350,7 +456,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         person.setMedicalRecordNo(Long.valueOf(medicalRecordTextField.getText()));
         person.setHealthPlanBenficiaryNo(Long.valueOf(healthPlanTextField.getText()));
         person.setBankAccountNo(Long.valueOf(bankAccountNoTextField.getText()));
-        person.setBankAccountNoSec(Long.valueOf(bankAccountNoSecTextField.getText()));
+        person.setBankAccountNoSec(bankAccountNoSecTextField.getText().isBlank()?0:Long.valueOf(bankAccountNoSecTextField.getText()));
         person.setLicenseNo(Long.valueOf(licenseNoTextField.getText()));
         person.setVehicleIdentifier(vehicleIdentityTextField.getText());
         person.setDeviceIdentifier(deviceIdentityTextField.getText());
@@ -393,6 +499,24 @@ public class CreateJPanel extends javax.swing.JPanel {
         System.out.println("Biometric Validation : " + isBiometricValid());
         
         
+        nameTextFieldKeyReleased(null);
+        dobTextFieldKeyReleased(null);
+        telephoneNoTextFieldKeyReleased(null);
+        telephoneNoSecTextFieldKeyReleased(null);
+        faxNoTextFieldKeyReleased(null);
+        emailTextFieldKeyReleased(null);
+        emailTextSecFieldKeyReleased(null);
+        ssnTextFieldKeyReleased(null);
+        medicalRecordTextFieldKeyReleased(null);
+        healthPlanTextFieldKeyReleased(null);
+        bankAccountNoTextFieldKeyReleased(null);
+        bankAccountNoSecTextFieldKeyReleased(null);
+        vehicleIdentityTextFieldKeyReleased(null);
+        deviceIdentityTextFieldKeyReleased(null);
+        ipAddressTextFieldKeyReleased(null);
+        biometricsTextFieldKeyReleased(null);
+        licenseNoTextFieldKeyReleased(null);
+                
         if( isNameValid() && isDobValid() && isTelephoneNoValid() && isTelephoneNoSecValid() && 
                 isFaxNoValid() && isEmailIdValid() && isEmailIdSecValid() && isSsnValid() &&
                 isMedicalRecordNoValid() && isHealthPlanBenificaryNoValid() && isBankAccountNoValid() &&
@@ -451,15 +575,7 @@ public class CreateJPanel extends javax.swing.JPanel {
     
     private boolean isLinkedInValid() {
         
-//        if(linkedInTextField.getText().isBlank()){
-//            return false;
-//        }
-        
-        String linkedInUrl = "https://www.linkedin.com/" + linkedInTextField.getText().replace(" ", "");
-        
-        try {
-            new URL(linkedInUrl).openStream().close();
-        } catch (Exception e) {
+        if(linkedInTextField.getText().isBlank()){
             return false;
         }
         
@@ -468,31 +584,72 @@ public class CreateJPanel extends javax.swing.JPanel {
     
     private boolean isDeviceIdentifierValid() {
         
+        String deviceIdentifier = deviceIdentityTextField.getText();
+        if(deviceIdentifier.isBlank()){
+            return false;
+        }
         return true;
     }
     
     private boolean isVehicleIdentifierValid() {
-        return true;
+        
+        String vehicleIndetifier = vehicleIdentityTextField.getText();
+        if(vehicleIndetifier.isBlank()){
+            return false;
+        }
+        String vehicleIdentifierRegex = "^[A-Z0-9]+[A-Z0-9 ]+$";
+        return vehicleIndetifier.matches(vehicleIdentifierRegex);
     }
     
     private boolean isLicenseNoValid() {
         
-        return true;
+        String licenseNo = licenseNoTextField.getText();
+        if(licenseNo.isBlank()){
+            return false;
+        }
+        String licenseNoRegex = "^[a-zA-Z0-9]+$";
+        Pattern p = Pattern.compile(licenseNoRegex);
+        Matcher matcher = p.matcher(ssnTextField.getText());
+        
+        return matcher.matches();
     }
     
     private boolean isBankAccountNoValid() {
         
-        return true;
+        String bankAccountNo = bankAccountNoTextField.getText();
+        bankAccountNo = bankAccountNo.replace(" ", "");
+       
+        try {
+           Long.valueOf(bankAccountNo);
+           return true;
+        } catch (Exception e) {
+           return false;
+        }
     }
     
     private boolean isHealthPlanBenificaryNoValid() {
         
-        return true;
+        String healthPlanNo = healthPlanTextField.getText();
+        healthPlanNo = healthPlanNo.replace(" ", "");
+        try {
+            Long.valueOf(healthPlanNo);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
     
     private boolean isMedicalRecordNoValid() {
        
-       return true; 
+       String mrnNo = medicalRecordTextField.getText();
+       mrnNo = mrnNo.replace(" ", "");
+       
+       try {
+           Long.valueOf(mrnNo);
+           return true;
+       } catch (Exception e) {
+           return false;
+       }
     }
     
     private boolean isSsnValid() {
@@ -512,10 +669,10 @@ public class CreateJPanel extends javax.swing.JPanel {
         return emailTextField.getText().matches(emailRegex);
     }
     
-        private boolean isEmailIdSecValid() {
+    private boolean isEmailIdSecValid() {
         
         if(emailTextSecField.getText().isBlank()){
-            return false;
+            return true;
         }
         String emailRegex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
         return emailTextSecField.getText().matches(emailRegex);
@@ -572,10 +729,13 @@ public class CreateJPanel extends javax.swing.JPanel {
         }
     }
     
-        private boolean isTelephoneNoSecValid() {
+    private boolean isTelephoneNoSecValid() {
         
         String telephoneNo = telephoneNoSecTextField.getText();
         telephoneNo = telephoneNo.replace(" ", "");
+        if(telephoneNo.isBlank()){
+            return true;
+        }
         if(telephoneNo.length()!=10){
             return false;
         }
@@ -627,9 +787,168 @@ public class CreateJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_uploadJBtnActionPerformed
 
-    private void ssnTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ssnTextFieldActionPerformed
+    private void nameTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameTextFieldKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_ssnTextFieldActionPerformed
+        if(isNameValid()){
+            nameTextField.setBackground(Color.WHITE);
+        }else{
+            nameTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_nameTextFieldKeyReleased
+
+    private void dobTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dobTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isDobValid()){
+            dobTextField.setBackground(Color.WHITE);
+        }else{
+            dobTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_dobTextFieldKeyReleased
+
+    private void telephoneNoTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telephoneNoTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isTelephoneNoValid()){
+            telephoneNoTextField.setBackground(Color.WHITE);
+        }else{
+            telephoneNoTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_telephoneNoTextFieldKeyReleased
+
+    private void telephoneNoSecTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telephoneNoSecTextFieldKeyReleased
+        // TODO add your handling code here:
+        
+        if(isTelephoneNoSecValid()){
+            telephoneNoSecTextField.setBackground(Color.WHITE);
+        }else{
+            telephoneNoSecTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_telephoneNoSecTextFieldKeyReleased
+
+    private void emailTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_emailTextFieldKeyReleased
+        // TODO add your handling code here:
+        
+        if(isEmailIdValid()){
+            emailTextField.setBackground(Color.WHITE);
+        }else{
+            emailTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_emailTextFieldKeyReleased
+
+    private void emailTextSecFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_emailTextSecFieldKeyReleased
+        // TODO add your handling code here:
+        
+        if(isEmailIdSecValid()){
+            emailTextSecField.setBackground(Color.WHITE);
+        }else{
+            emailTextSecField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_emailTextSecFieldKeyReleased
+
+    private void medicalRecordTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_medicalRecordTextFieldKeyReleased
+        // TODO add your handling code here:
+        
+        if(isMedicalRecordNoValid()){
+            medicalRecordTextField.setBackground(Color.WHITE);
+        }else{
+            medicalRecordTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_medicalRecordTextFieldKeyReleased
+
+    private void healthPlanTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_healthPlanTextFieldKeyReleased
+        // TODO add your handling code here:
+        
+        if(isHealthPlanBenificaryNoValid()){
+            healthPlanTextField.setBackground(Color.WHITE);
+        }else{
+            healthPlanTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_healthPlanTextFieldKeyReleased
+
+    private void ssnTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ssnTextFieldKeyReleased
+        // TODO add your handling code here:
+        
+        if(isSsnValid()){
+            ssnTextField.setBackground(Color.WHITE);
+        }else{
+            ssnTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_ssnTextFieldKeyReleased
+
+    private void bankAccountNoTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bankAccountNoTextFieldKeyReleased
+        // TODO add your handling code here:
+        
+        if(isBankAccountNoValid()){
+            bankAccountNoTextField.setBackground(Color.WHITE);
+        }else{
+            bankAccountNoTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_bankAccountNoTextFieldKeyReleased
+
+    private void bankAccountNoSecTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bankAccountNoSecTextFieldKeyReleased
+        // TODO add your handling code here:
+        
+        if(isBankAccountNoValid()){
+            bankAccountNoSecTextField.setBackground(Color.WHITE);
+        }else{
+            bankAccountNoSecTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_bankAccountNoSecTextFieldKeyReleased
+
+    private void vehicleIdentityTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_vehicleIdentityTextFieldKeyReleased
+        // TODO add your handling code here:
+        
+        if(isVehicleIdentifierValid()){
+            vehicleIdentityTextField.setBackground(Color.WHITE);
+        }else{
+            vehicleIdentityTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_vehicleIdentityTextFieldKeyReleased
+
+    private void deviceIdentityTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_deviceIdentityTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isDeviceIdentifierValid()){
+            deviceIdentityTextField.setBackground(Color.WHITE);
+        }else{
+            deviceIdentityTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_deviceIdentityTextFieldKeyReleased
+
+    private void biometricsTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_biometricsTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isBiometricValid()){
+            biometricsTextField.setBackground(Color.WHITE);
+        }else{
+            biometricsTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_biometricsTextFieldKeyReleased
+
+    private void faxNoTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_faxNoTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isFaxNoValid()){
+            faxNoTextField.setBackground(Color.WHITE);
+        }else{
+            faxNoTextField.setBackground(Color.RED);
+
+        }
+    }//GEN-LAST:event_faxNoTextFieldKeyReleased
+
+    private void licenseNoTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_licenseNoTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isLicenseNoValid()){
+            licenseNoTextField.setBackground(Color.WHITE);
+        }else{
+            licenseNoTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_licenseNoTextFieldKeyReleased
+
+    private void ipAddressTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ipAddressTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isIpAddressValid()){
+            ipAddressTextField.setBackground(Color.WHITE);
+        }else{
+            ipAddressTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_ipAddressTextFieldKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

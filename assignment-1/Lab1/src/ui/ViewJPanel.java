@@ -31,22 +31,22 @@ public class ViewJPanel extends javax.swing.JPanel {
         
         nameTextField.setText(person.getName());
         geographicDataTextField.setText(person.getGeographicData());
-        dobTextField.setText(new SimpleDateFormat("dd/MM/yyyy").format(person.getDob()));
-        telephoneNoTextField.setText(String.valueOf(person.getTelephoneNo()));
-        telephoneNoSecTextField.setText(String.valueOf(person.getTelephoneNoSec()));
-        faxNoTextField.setText(String.valueOf(person.getFaxNo()));
+        dobTextField.setText(person.getDob()==null?"":new SimpleDateFormat("dd/MM/yyyy").format(person.getDob()));
+        telephoneNoTextField.setText(person.getTelephoneNo()==0?"":String.valueOf(person.getTelephoneNo()));
+        telephoneNoSecTextField.setText(person.getTelephoneNoSec()==0?"":String.valueOf(person.getTelephoneNoSec()));
+        faxNoTextField.setText(person.getFaxNo()==0?"":String.valueOf(person.getFaxNo()));
         emailTextField.setText(person.getEmailId());
         emailTextSecField.setText(person.getEmailIdSec());
         ipAddressTextField.setText(person.getIpAddress());
-        medicalRecordTextField.setText(String.valueOf(person.getMedicalRecordNo()));
-        healthPlanTextField.setText(String.valueOf(person.getHealthPlanBenficiaryNo()));
+        medicalRecordTextField.setText(person.getMedicalRecordNo()==0?"":String.valueOf(person.getMedicalRecordNo()));
+        healthPlanTextField.setText(person.getHealthPlanBenficiaryNo()==0?"":String.valueOf(person.getHealthPlanBenficiaryNo()));
         ssnTextField.setText(person.getSsn());
-        bankAccountNoTextField.setText(String.valueOf(person.getBankAccountNo()));
-        bankAccountNoSecTextField.setText(String.valueOf(person.getBankAccountNoSec()));
+        bankAccountNoTextField.setText(person.getBankAccountNo()==0?"":String.valueOf(person.getBankAccountNo()));
+        bankAccountNoSecTextField.setText(person.getBankAccountNoSec()==0?"":String.valueOf(person.getBankAccountNoSec()));
         vehicleIdentityTextField.setText(person.getVehicleIdentifier());
         deviceIdentityTextField.setText(person.getDeviceIdentifier());
         linkedInTextField.setText(person.getLinkedIn());
-        licenseNoTextField.setText(String.valueOf(person.getLicenseNo()));
+        licenseNoTextField.setText(person.getLicenseNo()==0?"":String.valueOf(person.getLicenseNo()));
         uniqueIdentityTextField.setText(person.getUniqueNo());
         biometricsTextField.setText(person.getBiometric());
         
