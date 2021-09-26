@@ -202,6 +202,19 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
+        linkedInTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                linkedInTextFieldKeyReleased(evt);
+            }
+        });
+
+        geographicDataTextField.setToolTipText("Input Complete Address");
+        geographicDataTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                geographicDataTextFieldKeyReleased(evt);
+            }
+        });
+
         bankAccountNoJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         bankAccountNoJLabel.setText("Bank Account(Pri) :");
 
@@ -214,6 +227,12 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         licenseNoJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         licenseNoJLabel.setText("License No :");
+
+        uniqueIdentityTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                uniqueIdentityTextFieldKeyReleased(evt);
+            }
+        });
 
         dobTextField.setToolTipText("dd/MM/yyyy  Format Only");
         dobTextField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -492,11 +511,13 @@ public class CreateJPanel extends javax.swing.JPanel {
         System.out.println("Medical Validation : " + isMedicalRecordNoValid());
         System.out.println("Health Plan Validation : " + isHealthPlanBenificaryNoValid());
         System.out.println("Bank Account Validation : " + isBankAccountNoValid());
+        System.out.println("Bank Account Validation : " + isBankAccountNoSecValid());
         System.out.println("Vehicle Identity Validation : " + isVehicleIdentifierValid());
         System.out.println("Device Identity Validation : " + isDeviceIdentifierValid());
         System.out.println("LinkedIn Validation : " + isLinkedInValid());
         System.out.println("Ip Address Validation : " + isIpAddressValid());
         System.out.println("Biometric Validation : " + isBiometricValid());
+        System.out.println("UniqueIdentity Validation : " + isUniqueIdentityValid());
         
         
         nameTextFieldKeyReleased(null);
@@ -516,12 +537,14 @@ public class CreateJPanel extends javax.swing.JPanel {
         ipAddressTextFieldKeyReleased(null);
         biometricsTextFieldKeyReleased(null);
         licenseNoTextFieldKeyReleased(null);
+        linkedInTextFieldKeyReleased(null);
+        uniqueIdentityTextFieldKeyReleased(null);
                 
         if( isNameValid() && isDobValid() && isTelephoneNoValid() && isTelephoneNoSecValid() && 
                 isFaxNoValid() && isEmailIdValid() && isEmailIdSecValid() && isSsnValid() &&
                 isMedicalRecordNoValid() && isHealthPlanBenificaryNoValid() && isBankAccountNoValid() &&
                 isVehicleIdentifierValid() && isDeviceIdentifierValid() && isLinkedInValid() &&
-                isIpAddressValid() && isBiometricValid() ) {
+                isIpAddressValid() && isBiometricValid() && isBankAccountNoSecValid() && isUniqueIdentityValid()) {
             
             return true;
         }
@@ -579,7 +602,7 @@ public class CreateJPanel extends javax.swing.JPanel {
             return false;
         }
         
-        return true;
+        return linkedInTextField.getText().matches("^[A-Za-z0-9]+[A-Za-z0-9 ._-]+$");
     }
     
     private boolean isDeviceIdentifierValid() {
@@ -588,7 +611,8 @@ public class CreateJPanel extends javax.swing.JPanel {
         if(deviceIdentifier.isBlank()){
             return false;
         }
-        return true;
+        
+        return deviceIdentityTextField.getText().matches("^[A-Za-z0-9]+[A-Za-z0-9]+$");
     }
     
     private boolean isVehicleIdentifierValid() {
@@ -609,7 +633,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         }
         String licenseNoRegex = "^[a-zA-Z0-9]+$";
         Pattern p = Pattern.compile(licenseNoRegex);
-        Matcher matcher = p.matcher(ssnTextField.getText());
+        Matcher matcher = p.matcher(licenseNoTextField.getText());
         
         return matcher.matches();
     }
@@ -621,6 +645,19 @@ public class CreateJPanel extends javax.swing.JPanel {
        
         try {
            Long.valueOf(bankAccountNo);
+           return true;
+        } catch (Exception e) {
+           return false;
+        }
+    }
+    
+    private boolean isBankAccountNoSecValid() {
+        String bankAccountNoSec = bankAccountNoTextField.getText();
+        if(bankAccountNoSec.isBlank()){
+            return true;
+        }
+        try {
+           Long.valueOf(bankAccountNoSec);
            return true;
         } catch (Exception e) {
            return false;
@@ -676,6 +713,15 @@ public class CreateJPanel extends javax.swing.JPanel {
         }
         String emailRegex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
         return emailTextSecField.getText().matches(emailRegex);
+    }
+    
+    private boolean isUniqueIdentityValid(){
+        
+        if(uniqueIdentityTextField.getText().isBlank()){
+            return false;
+        }
+        String uniqueIdentityRegex = "^[A-Za-z0-9]+[A-Za-z0-9]+$";
+        return uniqueIdentityTextField.getText().matches(uniqueIdentityRegex);
     }
     
     private boolean isFaxNoValid() {
@@ -754,6 +800,15 @@ public class CreateJPanel extends javax.swing.JPanel {
         }
         return nameTextField.getText().matches("^[a-zA-Z\\s]*$");
         
+    }
+    
+    private boolean isGeographicDataValid(){
+        
+        if(geographicDataTextField.getText().isBlank()) {
+            return false;
+        }
+            
+        return geographicDataTextField.getText().matches("^[a-zA-Z0-9]+[A-Za-z0-9 -.]+$");
     }
     
     private void setPhoto(){
@@ -887,7 +942,7 @@ public class CreateJPanel extends javax.swing.JPanel {
     private void bankAccountNoSecTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bankAccountNoSecTextFieldKeyReleased
         // TODO add your handling code here:
         
-        if(isBankAccountNoValid()){
+        if(isBankAccountNoSecValid()){
             bankAccountNoSecTextField.setBackground(Color.WHITE);
         }else{
             bankAccountNoSecTextField.setBackground(Color.RED);
@@ -949,6 +1004,34 @@ public class CreateJPanel extends javax.swing.JPanel {
             ipAddressTextField.setBackground(Color.RED);
         }
     }//GEN-LAST:event_ipAddressTextFieldKeyReleased
+
+    private void linkedInTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_linkedInTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isLinkedInValid()){
+            linkedInTextField.setBackground(Color.WHITE);
+        }else{
+            linkedInTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_linkedInTextFieldKeyReleased
+
+    private void uniqueIdentityTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_uniqueIdentityTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isUniqueIdentityValid()){
+            uniqueIdentityTextField.setBackground(Color.WHITE);
+        }else{
+            uniqueIdentityTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_uniqueIdentityTextFieldKeyReleased
+
+    private void geographicDataTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_geographicDataTextFieldKeyReleased
+        // TODO add your handling code here:
+        
+        if(isGeographicDataValid()){
+            geographicDataTextField.setBackground(Color.WHITE);
+        }else{
+            geographicDataTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_geographicDataTextFieldKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

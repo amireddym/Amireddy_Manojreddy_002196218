@@ -385,8 +385,17 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="linkedInTextField">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="linkedInTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="geographicDataTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Input Complete Address"/>
+      </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="geographicDataTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="bankAccountNoJLabel">
       <Properties>
@@ -409,6 +418,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="uniqueIdentityTextField">
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="uniqueIdentityTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="dobTextField">
       <Properties>
