@@ -476,7 +476,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         person.setHealthPlanBenficiaryNo(Long.valueOf(healthPlanTextField.getText()));
         person.setBankAccountNo(Long.valueOf(bankAccountNoTextField.getText()));
         person.setBankAccountNoSec(bankAccountNoSecTextField.getText().isBlank()?0:Long.valueOf(bankAccountNoSecTextField.getText()));
-        person.setLicenseNo(Long.valueOf(licenseNoTextField.getText()));
+        person.setLicenseNo(licenseNoTextField.getText());
         person.setVehicleIdentifier(vehicleIdentityTextField.getText());
         person.setDeviceIdentifier(deviceIdentityTextField.getText());
         person.setLinkedIn(linkedInTextField.getText());

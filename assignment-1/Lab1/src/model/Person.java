@@ -27,7 +27,7 @@ public class Person {
     private long healthPlanBenficiaryNo;
     private long bankAccountNo;
     private long bankAccountNoSec;
-    private long licenseNo;
+    private String licenseNo;
     private String vehicleIdentifier;
     private String deviceIdentifier;
     private String linkedIn;
@@ -115,11 +115,11 @@ public class Person {
         this.bankAccountNo = bankAccountNo;
     }
 
-    public long getLicenseNo() {
+    public String getLicenseNo() {
         return licenseNo;
     }
 
-    public void setLicenseNo(long licenseNo) {
+    public void setLicenseNo(String licenseNo) {
         this.licenseNo = licenseNo;
     }
 

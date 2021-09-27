@@ -46,7 +46,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         vehicleIdentityTextField.setText(person.getVehicleIdentifier());
         deviceIdentityTextField.setText(person.getDeviceIdentifier());
         linkedInTextField.setText(person.getLinkedIn());
-        licenseNoTextField.setText(person.getLicenseNo()==0?"":String.valueOf(person.getLicenseNo()));
+        licenseNoTextField.setText(person.getLicenseNo());
         uniqueIdentityTextField.setText(person.getUniqueNo());
         biometricsTextField.setText(person.getBiometric());
         
