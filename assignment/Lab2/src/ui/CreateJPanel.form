@@ -133,6 +133,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="distanceJTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Enter only Floating Number"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="availabilityJLabel">
       <Properties>
@@ -155,9 +158,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="manufacturedYearJTextField">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manufacturedYearJTextFieldActionPerformed"/>
-      </Events>
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="yyyy Format only"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="seatCapacityJLabel">
       <Properties>
@@ -166,6 +169,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="seatCapacityJTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Enter only Numbers"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="serialNoJLabel">
       <Properties>
@@ -174,9 +180,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="serialNoJTextField">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="serialNoJTextFieldActionPerformed"/>
-      </Events>
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Only charecters and Numbers"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="modelNoJLabel">
       <Properties>
@@ -185,6 +191,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="modelNoJTextField">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Only charecters and Numbers"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="operatingCityJLabel">
       <Properties>

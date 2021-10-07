@@ -81,7 +81,7 @@ public class HomeJFrame extends javax.swing.JFrame {
                 .addComponent(createJButton)
                 .addGap(18, 18, 18)
                 .addComponent(viewJButton)
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addContainerGap(693, Short.MAX_VALUE))
         );
 
         controlJPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {createJButton, viewJButton});
@@ -92,11 +92,11 @@ public class HomeJFrame extends javax.swing.JFrame {
         viewJPanel.setLayout(viewJPanelLayout);
         viewJPanelLayout.setHorizontalGroup(
             viewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 627, Short.MAX_VALUE)
+            .addGap(0, 1427, Short.MAX_VALUE)
         );
         viewJPanelLayout.setVerticalGroup(
             viewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addGap(0, 850, Short.MAX_VALUE)
         );
 
         homeSplitPane.setRightComponent(viewJPanel);
