@@ -5,17 +5,26 @@
  */
 package ui;
 
+import helper.DataSerializer;
+import java.util.ArrayList;
+import java.util.List;
+import model.Car;
+import model.CarsInformation;
+
 /**
  *
  * @author manojreddy
  */
 public class HomeJFrame extends javax.swing.JFrame {
 
+    private CarsInformation carsInformation;
+    
     /**
      * Creates new form HomeJFrame
      */
     public HomeJFrame() {
         initComponents();
+        this.carsInformation = new CarsInformation(DataSerializer.serializeData());        
     }
 
     /**
@@ -35,9 +44,21 @@ public class HomeJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        controlJPanel.setBackground(new java.awt.Color(102, 153, 255));
+
         createJButton.setText("Create");
+        createJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createJButtonActionPerformed(evt);
+            }
+        });
 
         viewJButton.setText("View");
+        viewJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewJButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout controlJPanelLayout = new javax.swing.GroupLayout(controlJPanel);
         controlJPanel.setLayout(controlJPanelLayout);
@@ -47,18 +68,23 @@ public class HomeJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(controlJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(createJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(viewJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(viewJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        controlJPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {createJButton, viewJButton});
+
         controlJPanelLayout.setVerticalGroup(
             controlJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlJPanelLayout.createSequentialGroup()
                 .addGap(81, 81, 81)
                 .addComponent(createJButton)
                 .addGap(18, 18, 18)
-                .addComponent(viewJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(133, 133, 133))
+                .addComponent(viewJButton)
+                .addContainerGap(193, Short.MAX_VALUE))
         );
+
+        controlJPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {createJButton, viewJButton});
 
         homeSplitPane.setLeftComponent(controlJPanel);
 
@@ -66,11 +92,11 @@ public class HomeJFrame extends javax.swing.JFrame {
         viewJPanel.setLayout(viewJPanelLayout);
         viewJPanelLayout.setHorizontalGroup(
             viewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 441, Short.MAX_VALUE)
+            .addGap(0, 627, Short.MAX_VALUE)
         );
         viewJPanelLayout.setVerticalGroup(
             viewJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 290, Short.MAX_VALUE)
+            .addGap(0, 350, Short.MAX_VALUE)
         );
 
         homeSplitPane.setRightComponent(viewJPanel);
@@ -88,6 +114,18 @@ public class HomeJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void createJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createJButtonActionPerformed
+        // TODO add your handling code here:
+        CreateJPanel createJPanel = new CreateJPanel(carsInformation);
+        homeSplitPane.setRightComponent(createJPanel);
+    }//GEN-LAST:event_createJButtonActionPerformed
+
+    private void viewJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewJButtonActionPerformed
+        // TODO add your handling code here:
+        ViewJPanel viewJPanel = new ViewJPanel(carsInformation);
+        homeSplitPane.setRightComponent(viewJPanel);
+    }//GEN-LAST:event_viewJButtonActionPerformed
 
     /**
      * @param args the command line arguments

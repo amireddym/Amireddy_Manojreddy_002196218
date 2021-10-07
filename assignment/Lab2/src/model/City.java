@@ -5,10 +5,18 @@
  */
 package model;
 
+import java.util.Arrays;
+
 /**
  *
  * @author manojreddy
  */
 public enum City {
-    Boston,NewYork,Florida,California
+    
+    Boston,NewYork,Florida;
+    
+    public static String[] getOperatingCitiesArray(){
+        
+        return Arrays.stream(City.values()).map(City::name).toArray(String[]::new);
+    }
 }

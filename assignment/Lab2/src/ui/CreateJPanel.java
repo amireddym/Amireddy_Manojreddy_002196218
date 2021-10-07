@@ -1,9 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ui;
+
+import java.util.Date;
+import java.util.List;
+import javax.swing.ComboBoxModel;
+import javax.swing.JOptionPane;
+import model.Car;
+import model.CarsInformation;
+import model.City;
+import model.Manufacturer;
 
 /**
  *
@@ -11,13 +15,34 @@ package ui;
  */
 public class CreateJPanel extends javax.swing.JPanel {
 
+    private CarsInformation carsInformation;
+    
     /**
      * Creates new form CreateJPanel
      */
     public CreateJPanel() {
         initComponents();
     }
-
+    
+    public CreateJPanel(CarsInformation carsInformation) {
+        initComponents();
+        initializeUIvalues();
+        this.carsInformation = carsInformation;
+    }
+    
+    private void initializeUIvalues(){
+        
+        String[] manufacturers = Manufacturer.getManufactureArray();
+        for(String manufacturer:manufacturers){
+            manufacturerJComboBox.addItem(manufacturer);
+        }
+        
+        String[] operatingCities = City.getOperatingCitiesArray();
+        for(String city:operatingCities){
+            operatingCityJComboBox.addItem(city);
+        }
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,31 +53,225 @@ public class CreateJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         createJLabel = new javax.swing.JLabel();
+        currentDistanceJLabel = new javax.swing.JLabel();
+        distanceJTextField = new javax.swing.JTextField();
+        availabilityJLabel = new javax.swing.JLabel();
+        availabilityJCheckBox = new javax.swing.JCheckBox();
+        manufacturerJLabel = new javax.swing.JLabel();
+        manufacturedYearJLabel = new javax.swing.JLabel();
+        manufacturedYearJTextField = new javax.swing.JTextField();
+        seatCapacityJLabel = new javax.swing.JLabel();
+        seatCapacityJTextField = new javax.swing.JTextField();
+        serialNoJLabel = new javax.swing.JLabel();
+        serialNoJTextField = new javax.swing.JTextField();
+        modelNoJLabel = new javax.swing.JLabel();
+        modelNoJTextField = new javax.swing.JTextField();
+        operatingCityJLabel = new javax.swing.JLabel();
+        maintainanceExperiedJLabel = new javax.swing.JLabel();
+        maintainanceJCheckBox = new javax.swing.JCheckBox();
+        addJButton = new javax.swing.JButton();
+        operatingCityJComboBox = new javax.swing.JComboBox<>();
+        manufacturerJComboBox = new javax.swing.JComboBox<>();
 
         createJLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         createJLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        createJLabel.setText("Create Car");
+        createJLabel.setText("Add New Car to Fleet");
+
+        currentDistanceJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        currentDistanceJLabel.setText("Current Distance:");
+
+        availabilityJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        availabilityJLabel.setText("Availability:");
+
+        manufacturerJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        manufacturerJLabel.setText("Manufacturer:");
+
+        manufacturedYearJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        manufacturedYearJLabel.setText("Manufactured Yr:");
+
+        manufacturedYearJTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manufacturedYearJTextFieldActionPerformed(evt);
+            }
+        });
+
+        seatCapacityJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        seatCapacityJLabel.setText("Seat Capacity:");
+
+        serialNoJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        serialNoJLabel.setText("Serial No:");
+
+        serialNoJTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serialNoJTextFieldActionPerformed(evt);
+            }
+        });
+
+        modelNoJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        modelNoJLabel.setText("Model No:");
+
+        operatingCityJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        operatingCityJLabel.setText("Operating City:");
+
+        maintainanceExperiedJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        maintainanceExperiedJLabel.setText("Maintainance Exp:");
+
+        addJButton.setText("Add");
+        addJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addJButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(325, 325, 325)
-                .addComponent(createJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(359, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(currentDistanceJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(availabilityJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(manufacturerJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(manufacturedYearJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(maintainanceExperiedJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(distanceJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                                    .addComponent(availabilityJCheckBox)
+                                    .addComponent(manufacturedYearJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                                    .addComponent(manufacturerJComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(106, 106, 106)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(seatCapacityJLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                                    .addComponent(serialNoJLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                                    .addComponent(modelNoJLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(operatingCityJLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(maintainanceJCheckBox))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(operatingCityJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(seatCapacityJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                                .addComponent(serialNoJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                                .addComponent(modelNoJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(345, 345, 345)
+                        .addComponent(addJButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(295, 295, 295)
+                        .addComponent(createJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {distanceJTextField, manufacturedYearJTextField});
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {seatCapacityJLabel, serialNoJLabel});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(createJLabel)
-                .addContainerGap(321, Short.MAX_VALUE))
+                .addComponent(createJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(currentDistanceJLabel)
+                    .addComponent(distanceJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(seatCapacityJLabel)
+                    .addComponent(seatCapacityJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(availabilityJCheckBox, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(availabilityJLabel)
+                        .addComponent(serialNoJLabel)
+                        .addComponent(serialNoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(manufacturerJLabel)
+                    .addComponent(modelNoJLabel)
+                    .addComponent(modelNoJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(manufacturerJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(manufacturedYearJLabel)
+                    .addComponent(manufacturedYearJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(operatingCityJLabel)
+                    .addComponent(operatingCityJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(maintainanceExperiedJLabel)
+                    .addComponent(maintainanceJCheckBox))
+                .addGap(18, 18, 18)
+                .addComponent(addJButton)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {distanceJTextField, manufacturedYearJTextField});
+
     }// </editor-fold>//GEN-END:initComponents
 
+    private void manufacturedYearJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manufacturedYearJTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_manufacturedYearJTextFieldActionPerformed
+
+    private void serialNoJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serialNoJTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_serialNoJTextFieldActionPerformed
+
+    private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
+        // TODO add your handling code here:
+        addCarToFleet();
+        JOptionPane.showMessageDialog(this, "Car successfully added to the fleet");
+        resetUi();
+    }//GEN-LAST:event_addJButtonActionPerformed
+
+    private void addCarToFleet() {
+        
+        carsInformation.add(new Car(Double.valueOf(distanceJTextField.getText()), availabilityJCheckBox.isSelected(), 
+                Manufacturer.valueOf(String.valueOf(manufacturerJComboBox.getSelectedItem())), manufacturedYearJTextField.getText(), 
+                Integer.valueOf(seatCapacityJTextField.getText()),serialNoJTextField.getText(), modelNoJTextField.getText(), new Date(), 
+                City.valueOf(String.valueOf(operatingCityJComboBox.getSelectedItem())), maintainanceJCheckBox.isSelected()));
+    }
+    
+    private void resetUi() {
+        
+        distanceJTextField.setText("");
+        availabilityJCheckBox.setSelected(false);
+        manufacturerJComboBox.setSelectedIndex(0);
+        manufacturedYearJTextField.setText("");
+        seatCapacityJTextField.setText("");
+        serialNoJTextField.setText("");
+        modelNoJTextField.setText("");
+        operatingCityJComboBox.setSelectedIndex(0);
+        maintainanceJCheckBox.setSelected(false);
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addJButton;
+    private javax.swing.JCheckBox availabilityJCheckBox;
+    private javax.swing.JLabel availabilityJLabel;
     private javax.swing.JLabel createJLabel;
+    private javax.swing.JLabel currentDistanceJLabel;
+    private javax.swing.JTextField distanceJTextField;
+    private javax.swing.JLabel maintainanceExperiedJLabel;
+    private javax.swing.JCheckBox maintainanceJCheckBox;
+    private javax.swing.JLabel manufacturedYearJLabel;
+    private javax.swing.JTextField manufacturedYearJTextField;
+    private javax.swing.JComboBox<String> manufacturerJComboBox;
+    private javax.swing.JLabel manufacturerJLabel;
+    private javax.swing.JLabel modelNoJLabel;
+    private javax.swing.JTextField modelNoJTextField;
+    private javax.swing.JComboBox<String> operatingCityJComboBox;
+    private javax.swing.JLabel operatingCityJLabel;
+    private javax.swing.JLabel seatCapacityJLabel;
+    private javax.swing.JTextField seatCapacityJTextField;
+    private javax.swing.JLabel serialNoJLabel;
+    private javax.swing.JTextField serialNoJTextField;
     // End of variables declaration//GEN-END:variables
 }
