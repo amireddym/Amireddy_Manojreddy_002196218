@@ -57,6 +57,7 @@
                       <Group type="103" groupAlignment="2" attributes="0">
                           <Component id="createJButton" linkSize="1" alignment="2" min="-2" pref="87" max="-2" attributes="0"/>
                           <Component id="viewJButton" linkSize="1" alignment="2" min="-2" pref="87" max="-2" attributes="0"/>
+                          <Component id="filterJButton" alignment="2" min="-2" pref="87" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -69,7 +70,9 @@
                       <Component id="createJButton" linkSize="2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="viewJButton" linkSize="2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="693" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="filterJButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="646" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -89,6 +92,14 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewJButtonActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="filterJButton">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Filter"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="filterJButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

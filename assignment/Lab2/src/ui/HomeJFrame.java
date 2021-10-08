@@ -40,6 +40,7 @@ public class HomeJFrame extends javax.swing.JFrame {
         controlJPanel = new javax.swing.JPanel();
         createJButton = new javax.swing.JButton();
         viewJButton = new javax.swing.JButton();
+        filterJButton = new javax.swing.JButton();
         viewJPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,6 +61,13 @@ public class HomeJFrame extends javax.swing.JFrame {
             }
         });
 
+        filterJButton.setText("Filter");
+        filterJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filterJButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout controlJPanelLayout = new javax.swing.GroupLayout(controlJPanel);
         controlJPanel.setLayout(controlJPanelLayout);
         controlJPanelLayout.setHorizontalGroup(
@@ -68,7 +76,8 @@ public class HomeJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(controlJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(createJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(viewJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(viewJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(filterJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -81,7 +90,9 @@ public class HomeJFrame extends javax.swing.JFrame {
                 .addComponent(createJButton)
                 .addGap(18, 18, 18)
                 .addComponent(viewJButton)
-                .addContainerGap(693, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(filterJButton)
+                .addContainerGap(646, Short.MAX_VALUE))
         );
 
         controlJPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {createJButton, viewJButton});
@@ -127,6 +138,12 @@ public class HomeJFrame extends javax.swing.JFrame {
         homeSplitPane.setRightComponent(viewJPanel);
     }//GEN-LAST:event_viewJButtonActionPerformed
 
+    private void filterJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filterJButtonActionPerformed
+        // TODO add your handling code here:
+        FilterJPanel filterJpanel = new FilterJPanel(carsInformation);
+        homeSplitPane.setRightComponent(filterJpanel);
+    }//GEN-LAST:event_filterJButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -165,6 +182,7 @@ public class HomeJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel controlJPanel;
     private javax.swing.JButton createJButton;
+    private javax.swing.JButton filterJButton;
     private javax.swing.JSplitPane homeSplitPane;
     private javax.swing.JButton viewJButton;
     private javax.swing.JPanel viewJPanel;

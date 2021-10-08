@@ -136,6 +136,9 @@
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="Enter only Floating Number"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="distanceJTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="availabilityJLabel">
       <Properties>
@@ -161,6 +164,9 @@
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="yyyy Format only"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="manufacturedYearJTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="seatCapacityJLabel">
       <Properties>
@@ -172,6 +178,9 @@
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="Enter only Numbers"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="seatCapacityJTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="serialNoJLabel">
       <Properties>
@@ -183,6 +192,9 @@
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="Only charecters and Numbers"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="serialNoJTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="modelNoJLabel">
       <Properties>
@@ -194,6 +206,9 @@
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="Only charecters and Numbers"/>
       </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="modelNoJTextFieldKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="operatingCityJLabel">
       <Properties>

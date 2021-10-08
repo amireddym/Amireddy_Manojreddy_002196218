@@ -101,6 +101,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         operatingCityJComboBox = new javax.swing.JComboBox<>();
         updateJButton = new javax.swing.JButton();
         maintainanceExpiryJCheckBox = new javax.swing.JCheckBox();
+        headerDisplayJLabel = new javax.swing.JLabel();
 
         viewCarsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -133,6 +134,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(viewCarsTable);
 
+        fleetUpdatedJLabel.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
         fleetUpdatedJLabel.setText("Fleet Last Updated On :");
 
         viewJButton.setText("View");
@@ -148,6 +150,8 @@ public class ViewJPanel extends javax.swing.JPanel {
                 deleteJButtonActionPerformed(evt);
             }
         });
+
+        userSelectedJPanel.setBackground(new java.awt.Color(102, 255, 255));
 
         currentDistanceJLabel.setText("Current Distance:");
 
@@ -255,13 +259,14 @@ public class ViewJPanel extends javax.swing.JPanel {
             userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(userSelectedJPanelLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(currentDistanceJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(currentDistanceJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(seatCapacityJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(seatCapacityJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(availabilityJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(availabilityJCheckBox))
+                .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(availabilityJCheckBox)
+                    .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(currentDistanceJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(currentDistanceJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(seatCapacityJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(seatCapacityJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(availabilityJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(serialNoJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -282,8 +287,12 @@ public class ViewJPanel extends javax.swing.JPanel {
                         .addComponent(maintainanceExpiryJCheckBox)))
                 .addGap(18, 18, 18)
                 .addComponent(updateJButton)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
+
+        headerDisplayJLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        headerDisplayJLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        headerDisplayJLabel.setText("Displaying all the Fleet of Cars currently on UBER");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -306,6 +315,10 @@ public class ViewJPanel extends javax.swing.JPanel {
                             .addComponent(userSelectedJPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jScrollPane1))
                         .addContainerGap())))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(205, 205, 205)
+                .addComponent(headerDisplayJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {fleetUpdatedJLabel, lastUpdatedOnDataJLabel});
@@ -317,7 +330,9 @@ public class ViewJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
+                        .addGap(20, 20, 20)
+                        .addComponent(headerDisplayJLabel)
+                        .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,17 +389,41 @@ public class ViewJPanel extends javax.swing.JPanel {
 
     private void updateJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateJButtonActionPerformed
         // TODO add your handling code here:
-        if(!isDataUpdatedByUser()){
-            setUpdatedData();   
-            int selectedRow = viewCarsTable.getSelectedRow();
-            populateTable();
-            viewCarsTable.setRowSelectionInterval(selectedRow, selectedRow);
-            JOptionPane.showMessageDialog(this, "Changes has been Successfully saved");
+        if(!isDataNotUpdatedByUser()){
+            
+            if(isSerialNounique()){
+                setUpdatedData();   
+                int selectedRow = viewCarsTable.getSelectedRow();
+                populateTable();
+                viewCarsTable.setRowSelectionInterval(selectedRow, selectedRow);
+                JOptionPane.showMessageDialog(this, "Changes has been Successfully saved");
+            }else{
+                JOptionPane.showMessageDialog(this, "Changes not Saved. Serial No already Existed");                
+            }
+
         }else{
             JOptionPane.showMessageDialog(this, "No changes has been made");
         }
     }//GEN-LAST:event_updateJButtonActionPerformed
 
+    private boolean isSerialNounique() {
+        
+        boolean serianNoUnique = true;
+        int userSelectedIndex = viewCarsTable.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel) viewCarsTable.getModel();        
+        Car userSelectedCar = (Car) model.getValueAt(userSelectedIndex,0);
+        if(userSelectedCar.getSerialNumber().contentEquals(serialNoJTextField.getText().replace(" ", ""))){
+            return serianNoUnique;
+        }
+        for(Car car:carsInformation.getCars()){
+            if(car.getSerialNumber().contentEquals(serialNoJTextField.getText().replace(" ", ""))){
+                serianNoUnique = false;
+            }
+        }
+        
+        return serianNoUnique;
+    }
+    
     private void setUpdatedData(){
         
         int userSelectedIndex = viewCarsTable.getSelectedRow();
@@ -399,19 +438,20 @@ public class ViewJPanel extends javax.swing.JPanel {
         userSelectedCar.setOperatingCity(City.valueOf((String) operatingCityJComboBox.getSelectedItem()));
         userSelectedCar.setMaintainanceCertificateExpired(maintainanceExpiryJCheckBox.isSelected());
         userSelectedCar.setSeatCapacity(Integer.valueOf(seatCapacityJTextField.getText()));
+        userSelectedCar.setSerialNumber(serialNoJTextField.getText());
         userSelectedCar.setLastUpdated(new Date());
         carsInformation.setLastUpdatedOn(new Date());
 
     }
     
-    private boolean isDataUpdatedByUser(){
+    private boolean isDataNotUpdatedByUser(){
         //TODO
         int userSelectedIndex = viewCarsTable.getSelectedRow();
         DefaultTableModel model = (DefaultTableModel) viewCarsTable.getModel();        
         Car userSelectedCar = (Car) model.getValueAt(userSelectedIndex,0);
-        return userSelectedCar.objectEqualityCheck(Double.valueOf(currentDistanceJTextField.getText()), availabilityJCheckBox.isSelected(), 
-                Manufacturer.valueOf((String) manufacturerJComboBox.getSelectedItem()), manufacturedYrJTextField.getText(), 
-                Integer.valueOf(seatCapacityJTextField.getText()), serialNoJTextField.getText(), modelNoJTextField.getText(), 
+        return userSelectedCar.objectEqualityCheck(Double.valueOf(currentDistanceJTextField.getText().replace(" ","")), availabilityJCheckBox.isSelected(), 
+                Manufacturer.valueOf((String) manufacturerJComboBox.getSelectedItem()), manufacturedYrJTextField.getText().replace(" ", ""), 
+                Integer.valueOf(seatCapacityJTextField.getText().replace(" ","")), serialNoJTextField.getText().replace(" ",""), modelNoJTextField.getText().replace(" ",""), 
                 City.valueOf((String) operatingCityJComboBox.getSelectedItem()), maintainanceExpiryJCheckBox.isSelected());
     }
     
@@ -482,6 +522,7 @@ public class ViewJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField currentDistanceJTextField;
     private javax.swing.JButton deleteJButton;
     private javax.swing.JLabel fleetUpdatedJLabel;
+    private javax.swing.JLabel headerDisplayJLabel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lastUpdatedOnDataJLabel;
     private javax.swing.JLabel maintainanceExperiedJLabel;

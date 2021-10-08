@@ -1,5 +1,6 @@
 package ui;
 
+import java.awt.Color;
 import java.util.Date;
 import java.util.List;
 import javax.swing.ComboBoxModel;
@@ -81,6 +82,11 @@ public class CreateJPanel extends javax.swing.JPanel {
         currentDistanceJLabel.setText("Current Distance:");
 
         distanceJTextField.setToolTipText("Enter only Floating Number");
+        distanceJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                distanceJTextFieldKeyReleased(evt);
+            }
+        });
 
         availabilityJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         availabilityJLabel.setText("Availability:");
@@ -92,21 +98,41 @@ public class CreateJPanel extends javax.swing.JPanel {
         manufacturedYearJLabel.setText("Manufactured Yr:");
 
         manufacturedYearJTextField.setToolTipText("yyyy Format only");
+        manufacturedYearJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                manufacturedYearJTextFieldKeyReleased(evt);
+            }
+        });
 
         seatCapacityJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         seatCapacityJLabel.setText("Seat Capacity:");
 
         seatCapacityJTextField.setToolTipText("Enter only Numbers");
+        seatCapacityJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                seatCapacityJTextFieldKeyReleased(evt);
+            }
+        });
 
         serialNoJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         serialNoJLabel.setText("Serial No:");
 
         serialNoJTextField.setToolTipText("Only charecters and Numbers");
+        serialNoJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                serialNoJTextFieldKeyReleased(evt);
+            }
+        });
 
         modelNoJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         modelNoJLabel.setText("Model No:");
 
         modelNoJTextField.setToolTipText("Only charecters and Numbers");
+        modelNoJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                modelNoJTextFieldKeyReleased(evt);
+            }
+        });
 
         operatingCityJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         operatingCityJLabel.setText("Operating City:");
@@ -215,6 +241,13 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
         // TODO add your handling code here:
+        
+        distanceJTextFieldKeyReleased(null);
+        seatCapacityJTextFieldKeyReleased(null);
+        modelNoJTextFieldKeyReleased(null);
+        manufacturedYearJTextFieldKeyReleased(null);
+        serialNoJTextFieldKeyReleased(null);
+        
         if(isDataEnteredValid()){
             addCarToFleet();
             JOptionPane.showMessageDialog(this, "Car successfully added to the fleet");
@@ -224,6 +257,51 @@ public class CreateJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_addJButtonActionPerformed
 
+    private void distanceJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_distanceJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isDistanceValid()){
+            distanceJTextField.setBackground(Color.WHITE);
+        }else{
+            distanceJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_distanceJTextFieldKeyReleased
+
+    private void manufacturedYearJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_manufacturedYearJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isManufacturedYrValid()){
+            manufacturedYearJTextField.setBackground(Color.WHITE);
+        }else{
+            manufacturedYearJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_manufacturedYearJTextFieldKeyReleased
+
+    private void seatCapacityJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_seatCapacityJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isSeatCapacityValid()){
+            seatCapacityJTextField.setBackground(Color.WHITE);
+        }else {
+            seatCapacityJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_seatCapacityJTextFieldKeyReleased
+
+    private void serialNoJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serialNoJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isSerialNoValid()){
+            serialNoJTextField.setBackground(Color.WHITE);
+        }else{
+            serialNoJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_serialNoJTextFieldKeyReleased
+
+    private void modelNoJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_modelNoJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isModelNoValid()){
+            modelNoJTextField.setBackground(Color.WHITE);
+        }else{
+            modelNoJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_modelNoJTextFieldKeyReleased
+    
     private boolean isDataEnteredValid() {
         
         if(isDistanceValid() && isSeatCapacityValid() && isSerialNoValid() &&
@@ -256,7 +334,22 @@ public class CreateJPanel extends javax.swing.JPanel {
         if(serialNo.isBlank()){
             return false;
         }
-        return true;
+        if(isSerialNounique()){
+            return true;
+        }
+        return false;
+    }
+    
+    private boolean isSerialNounique() {
+        
+        boolean serianNoUnique = true;
+        for(Car car:carsInformation.getCars()){
+            if(car.getSerialNumber().contentEquals(serialNoJTextField.getText().replace(" ", ""))){
+                serianNoUnique = false;
+            }
+        }
+        
+        return serianNoUnique;
     }
     
     private boolean isModelNoValid() {
@@ -305,9 +398,10 @@ public class CreateJPanel extends javax.swing.JPanel {
     
     private void addCarToFleet() {
         
-        carsInformation.add(new Car(Double.valueOf(distanceJTextField.getText()), availabilityJCheckBox.isSelected(), 
-                Manufacturer.valueOf(String.valueOf(manufacturerJComboBox.getSelectedItem())), manufacturedYearJTextField.getText(), 
-                Integer.valueOf(seatCapacityJTextField.getText()),serialNoJTextField.getText(), modelNoJTextField.getText(), new Date(), 
+        carsInformation.add(new Car(Double.valueOf(distanceJTextField.getText().replace(" ", "")), availabilityJCheckBox.isSelected(), 
+                Manufacturer.valueOf(String.valueOf(manufacturerJComboBox.getSelectedItem())), manufacturedYearJTextField.getText().replace(" ",""), 
+                Integer.valueOf(seatCapacityJTextField.getText().replace(" ","")),serialNoJTextField.getText().replace(" ",""),
+                modelNoJTextField.getText().replace(" ", ""), new Date(), 
                 City.valueOf(String.valueOf(operatingCityJComboBox.getSelectedItem())), maintainanceJCheckBox.isSelected()));
     }
     

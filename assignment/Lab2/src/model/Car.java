@@ -8,7 +8,7 @@ import java.util.UUID;
  *
  * @author manojreddy
  */
-public class Car implements Serializable{
+public class Car implements Serializable,Comparable<Car>{
     
     private UUID uuid;
     private double distanceFromUser;
@@ -170,6 +170,12 @@ public class Car implements Serializable{
             return true;
         }
         return false;
+    }
+
+    @Override
+    public int compareTo(Car o) {
+        
+        return Double.compare(getDistanceFromUser(), o.getDistanceFromUser());
     }
     
 }
