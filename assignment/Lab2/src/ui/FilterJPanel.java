@@ -5,6 +5,7 @@
  */
 package ui;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -588,8 +589,8 @@ public class FilterJPanel extends javax.swing.JPanel {
             row[4] = car.getSeatCapacity();
             row[5] = car.getSerialNumber();
             row[6] = car.getModelNumber();
-            row[7] = car.getCreatedDate().toString();
-            row[8] = car.getLastUpdated().toString();            
+            row[7] = formatDate(car.getCreatedDate());
+            row[8] = formatDate(car.getLastUpdated());            
             row[9] = car.getOperatingCity().toString();
             row[10] = car.isMaintainanceCertificateExpired();
             
@@ -607,7 +608,7 @@ public class FilterJPanel extends javax.swing.JPanel {
             filteredLastUpdatedJTextField.setText("");
             return;
         }
-        filteredLastUpdatedJTextField.setText(filterDataLastUpdated.toString());
+        filteredLastUpdatedJTextField.setText(formatDate(filterDataLastUpdated));
     }
     
     private List<Car> getFilteredCars() {
@@ -795,7 +796,7 @@ public class FilterJPanel extends javax.swing.JPanel {
         
     }
     
-        private void initializeUIDefaultvalues(){
+    private void initializeUIDefaultvalues(){
         
         manufactureJComboBox.removeAllItems();
         String[] manufacturers = Manufacturer.getManufactureArray();
@@ -811,6 +812,14 @@ public class FilterJPanel extends javax.swing.JPanel {
         
     }
     
+    private String formatDate(Date date){
+       
+        String pattern = "yyyy-MM-dd HH:mm:ss";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+        return simpleDateFormat.format(date);
+    }    
+        
     private void resetFilters() {
         availablilityJComboBox.setSelectedIndex(0);
         manufacturedYrTextField.setText("");

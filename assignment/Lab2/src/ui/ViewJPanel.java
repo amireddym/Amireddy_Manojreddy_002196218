@@ -5,6 +5,7 @@
  */
 package ui;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -52,8 +53,8 @@ public class ViewJPanel extends javax.swing.JPanel {
             row[4] = car.getSeatCapacity();
             row[5] = car.getSerialNumber();
             row[6] = car.getModelNumber();
-            row[7] = car.getCreatedDate().toString();
-            row[8] = car.getLastUpdated().toString();            
+            row[7] = formatDate(car.getCreatedDate());
+            row[8] = formatDate(car.getLastUpdated());            
             row[9] = car.getOperatingCity().toString();
             row[10] = car.isMaintainanceCertificateExpired();
             
@@ -61,11 +62,19 @@ public class ViewJPanel extends javax.swing.JPanel {
         }
         
         if(carsInformation.getLastUpdatedOn()!=null){
-            lastUpdatedOnDataJLabel.setText(carsInformation.getLastUpdatedOn().toString());
+            lastUpdatedOnDataJLabel.setText(formatDate(carsInformation.getLastUpdatedOn()));
         }
         
     }
 
+    private String formatDate(Date date){
+       
+        String pattern = "yyyy-MM-dd HH:mm:ss";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+        return simpleDateFormat.format(date);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
