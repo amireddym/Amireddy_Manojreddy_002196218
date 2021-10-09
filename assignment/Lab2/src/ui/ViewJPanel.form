@@ -322,6 +322,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="currentDistanceJTextField">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="currentDistanceJTextFieldKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="seatCapacityJLabel">
           <Properties>
@@ -331,7 +334,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="seatCapacityJTextField">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="seatCapacityJTextFieldActionPerformed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="seatCapacityJTextFieldKeyReleased"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="availabilityJLabel">
@@ -349,6 +352,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="serialNoJTextField">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="serialNoJTextFieldKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="modelNoJLabel">
           <Properties>
@@ -358,7 +364,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="modelNoJTextField">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modelNoJTextFieldActionPerformed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="modelNoJTextFieldKeyReleased"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="manufacturerJLabel">
@@ -384,6 +390,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="manufacturedYrJTextField">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="manufacturedYrJTextFieldKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="maintainanceExperiedJLabel">
           <Properties>

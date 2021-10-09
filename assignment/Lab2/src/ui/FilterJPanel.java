@@ -5,6 +5,7 @@
  */
 package ui;
 
+import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -55,16 +56,24 @@ public class FilterJPanel extends javax.swing.JPanel {
             row[4] = car.getSeatCapacity();
             row[5] = car.getSerialNumber();
             row[6] = car.getModelNumber();
-            row[7] = car.getCreatedDate().toString();
-            row[8] = car.getLastUpdated().toString();            
+            row[7] = formatDate(car.getCreatedDate());
+            row[8] = formatDate(car.getLastUpdated());            
             row[9] = car.getOperatingCity().toString();
             row[10] = car.isMaintainanceCertificateExpired();
             
             model.addRow(row);
         }
-        filteredLastUpdatedJTextField.setText(carsInformation.getLastUpdatedOn().toString());
+        filteredLastUpdatedJTextField.setText(formatDate(carsInformation.getLastUpdatedOn()));
         
     }
+    
+    private String formatDate(Date date){
+       
+        String pattern = "yyyy-MM-dd HH:mm:ss";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+
+        return simpleDateFormat.format(date);
+    }    
     
     private void initializeUI() {
         
@@ -194,17 +203,41 @@ public class FilterJPanel extends javax.swing.JPanel {
         manufacturedYrJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         manufacturedYrJLabel.setText("Manufactured Yr:");
 
+        manufacturedYrTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                manufacturedYrTextFieldKeyReleased(evt);
+            }
+        });
+
         manufacturerJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         manufacturerJLabel.setText("Manufacturer :");
 
         seatCapacityJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         seatCapacityJLabel.setText("Seat (Min) :");
 
+        seatCapacityJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                seatCapacityJTextFieldKeyReleased(evt);
+            }
+        });
+
         serialNoJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         serialNoJLabel.setText("Serial No:");
 
         serialNoJLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         serialNoJLabel1.setText("Model No:");
+
+        serialNoJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                serialNoJTextFieldKeyReleased(evt);
+            }
+        });
+
+        modelNoJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                modelNoJTextFieldKeyReleased(evt);
+            }
+        });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("City :");
@@ -226,6 +259,12 @@ public class FilterJPanel extends javax.swing.JPanel {
         limitJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         limitJLabel.setText("Limit :");
 
+        limitJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                limitJTextFieldKeyReleased(evt);
+            }
+        });
+
         viewJButton.setText("View");
         viewJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,12 +276,18 @@ public class FilterJPanel extends javax.swing.JPanel {
 
         currentDistanceJLabel.setText("Current Distance:");
 
+        currentDistanceJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                currentDistanceJTextFieldKeyReleased(evt);
+            }
+        });
+
         seatCapacityJLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         seatCapacityJLabel1.setText("Seat Capacity:");
 
-        seatCapacitySelectedJTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                seatCapacitySelectedJTextFieldActionPerformed(evt);
+        seatCapacitySelectedJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                seatCapacitySelectedJTextFieldKeyReleased(evt);
             }
         });
 
@@ -252,12 +297,18 @@ public class FilterJPanel extends javax.swing.JPanel {
         serialNoJLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         serialNoJLabel2.setText("Serial No:");
 
+        serialNoJTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                serialNoJTextField1KeyReleased(evt);
+            }
+        });
+
         modelNoJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         modelNoJLabel.setText("Model No:");
 
-        modelNoJTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modelNoJTextField1ActionPerformed(evt);
+        modelNoJTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                modelNoJTextField1KeyReleased(evt);
             }
         });
 
@@ -266,6 +317,12 @@ public class FilterJPanel extends javax.swing.JPanel {
 
         manufacturedYrJLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         manufacturedYrJLabel1.setText("Manufactured Yr:");
+
+        manufacturedYrJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                manufacturedYrJTextFieldKeyReleased(evt);
+            }
+        });
 
         maintainanceExperiedJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         maintainanceExperiedJLabel.setText("Maintainance Exp:");
@@ -371,6 +428,12 @@ public class FilterJPanel extends javax.swing.JPanel {
 
         seatCapacityMaxJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         seatCapacityMaxJLabel.setText("Seat (Max) :");
+
+        seatCapacityMaxJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                seatCapacityMaxJTextFieldKeyReleased(evt);
+            }
+        });
 
         jScrollPane3.setViewportView(manufactureJList);
 
@@ -533,11 +596,12 @@ public class FilterJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewJButton)
-                    .addComponent(lastUpdatedFilteredJLabel)
-                    .addComponent(filteredLastUpdatedJTextField)
-                    .addComponent(deleteJButton))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(viewJButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lastUpdatedFilteredJLabel)
+                        .addComponent(filteredLastUpdatedJTextField)
+                        .addComponent(deleteJButton)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(userSelectedJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -552,27 +616,34 @@ public class FilterJPanel extends javax.swing.JPanel {
 
     }// </editor-fold>//GEN-END:initComponents
 
-    private void seatCapacitySelectedJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatCapacitySelectedJTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_seatCapacitySelectedJTextFieldActionPerformed
-
-    private void modelNoJTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modelNoJTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modelNoJTextField1ActionPerformed
-
     private void searchJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchJButtonActionPerformed
         // TODO add your handling code here:
-        List<Car> carsFiltered = getFilteredCars();
-        if(distanceJCheckBox.isSelected()){
-            Collections.sort(carsFiltered);
-        }
-        if(!limitJTextField.getText().isBlank()){
-            populateFilteredData(carsFiltered.subList(0, Integer.valueOf(limitJTextField.getText().replace(" ", ""))));
+        
+        if(isSearchValid()){
+        
+            List<Car> carsFiltered = getFilteredCars();
+            if(distanceJCheckBox.isSelected()){
+                Collections.sort(carsFiltered);
+            }
+            if(!limitJTextField.getText().isBlank()){
+                populateFilteredData(carsFiltered.subList(0, Integer.valueOf(limitJTextField.getText().replace(" ", ""))));
+            }else{
+                populateFilteredData(carsFiltered);
+            }
         }else{
-            populateFilteredData(carsFiltered);
+            JOptionPane.showMessageDialog(this, "Please enter valid Inputs");
         }
     }//GEN-LAST:event_searchJButtonActionPerformed
 
+    private boolean isSearchValid(){
+        
+        if(isSearchedManufacturedYrValid() && isSearchedModelNoValid() && isSearchedSerialNoValid() && 
+                isSeatMaxValid() && isSeatMaxValid() && isLimitValid()){
+            return true;
+        }
+        return false;
+    }
+    
     private void populateFilteredData(List<Car> cars){
         
         DefaultTableModel model = (DefaultTableModel) viewCarsTable.getModel();
@@ -687,22 +758,307 @@ public class FilterJPanel extends javax.swing.JPanel {
 
     private void updateJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateJButtonActionPerformed
         // TODO add your handling code here:
-        if(!isDataUpdatedByUser()){
-            
-            if(isSerialNounique()){
-                setUpdatedData();   
-                int selectedRow = viewCarsTable.getSelectedRow();
-                searchJButtonActionPerformed(null);
-                viewCarsTable.setRowSelectionInterval(selectedRow, selectedRow);
-                JOptionPane.showMessageDialog(this, "Changes has been Successfully saved");
-            }else {
-                JOptionPane.showMessageDialog(this, "Changes not Saved. Serial No already Existed");                                
+        
+        currentDistanceJTextFieldKeyReleased(null);
+        serialNoJTextField1KeyReleased(null);
+        manufacturedYrJTextFieldKeyReleased(null);
+        seatCapacitySelectedJTextFieldKeyReleased(null);
+        modelNoJTextField1KeyReleased(null);
+        
+        if(isDataEnteredValid()){
+        
+            if(!isDataUpdatedByUser()){
+
+                if(isSerialNounique()){
+                    setUpdatedData();   
+                    int selectedRow = viewCarsTable.getSelectedRow();
+                    searchJButtonActionPerformed(null);
+                    viewCarsTable.setRowSelectionInterval(selectedRow, selectedRow);
+                    JOptionPane.showMessageDialog(this, "Changes has been Successfully saved");
+                }else {
+                    JOptionPane.showMessageDialog(this, "Changes not Saved. Serial No already Existed");                                
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "No changes has been made");
             }
         }else{
-            JOptionPane.showMessageDialog(this, "No changes has been made");
+            JOptionPane.showMessageDialog(this, "Please enter valid data");
         }
     }//GEN-LAST:event_updateJButtonActionPerformed
 
+    private boolean isDataEnteredValid() {
+        
+        if(isDistanceValid() && isSeatCapacityValid() && isSerialNoValid() &&
+                isModelNoValid() && isManufacturedYrValid()){
+            return true;
+        }
+        return false;
+    }
+    
+    private void currentDistanceJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_currentDistanceJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isDistanceValid()) {
+            currentDistanceJTextField.setBackground(Color.WHITE);
+        }else{
+            currentDistanceJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_currentDistanceJTextFieldKeyReleased
+
+    private void serialNoJTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serialNoJTextField1KeyReleased
+        // TODO add your handling code here:
+        if(isSerialNoValid()){
+            serialNoJTextField1.setBackground(Color.WHITE);
+        }else{
+            serialNoJTextField1.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_serialNoJTextField1KeyReleased
+
+    private void manufacturedYrJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_manufacturedYrJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isManufacturedYrValid()){
+            manufacturedYrJTextField.setBackground(Color.WHITE);
+        }else{
+            manufacturedYrJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_manufacturedYrJTextFieldKeyReleased
+
+    private void seatCapacitySelectedJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_seatCapacitySelectedJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isSeatCapacityValid()){
+            seatCapacitySelectedJTextField.setBackground(Color.WHITE);
+        }else{
+            seatCapacitySelectedJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_seatCapacitySelectedJTextFieldKeyReleased
+
+    private void modelNoJTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_modelNoJTextField1KeyReleased
+        // TODO add your handling code here:
+        if(isModelNoValid()){
+            modelNoJTextField1.setBackground(Color.WHITE);
+        }else{
+            modelNoJTextField1.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_modelNoJTextField1KeyReleased
+
+    private void manufacturedYrTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_manufacturedYrTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isSearchedManufacturedYrValid()){
+            manufacturedYrTextField.setBackground(Color.WHITE);
+        }else{
+            manufacturedYrTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_manufacturedYrTextFieldKeyReleased
+
+    private void serialNoJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serialNoJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isSearchedSerialNoValid()){
+            serialNoJTextField.setBackground(Color.WHITE);
+        }else{
+            serialNoJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_serialNoJTextFieldKeyReleased
+
+    private void seatCapacityJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_seatCapacityJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isSeatMinValid()){
+            seatCapacityJTextField.setBackground(Color.WHITE);
+        }else{
+            seatCapacityJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_seatCapacityJTextFieldKeyReleased
+
+    private void seatCapacityMaxJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_seatCapacityMaxJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isSeatMaxValid()){
+            seatCapacityMaxJTextField.setBackground(Color.WHITE);
+        }else{
+            seatCapacityMaxJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_seatCapacityMaxJTextFieldKeyReleased
+
+    private void modelNoJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_modelNoJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isSearchedModelNoValid()){
+            modelNoJTextField.setBackground(Color.WHITE);
+        }else{
+            modelNoJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_modelNoJTextFieldKeyReleased
+
+    private void limitJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_limitJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isLimitValid()) {
+            limitJTextField.setBackground(Color.WHITE);
+        }else{
+            limitJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_limitJTextFieldKeyReleased
+    
+    private boolean isModelNoValid() {
+        
+        String modelNo = modelNoJTextField1.getText().replace(" ", "");
+        if(modelNo.isBlank()){
+            return false;
+        }
+        return true;
+    }
+    
+    private boolean isSearchedModelNoValid() {
+        
+        String modelNo = modelNoJTextField1.getText().replace(" ", "");
+        if(modelNo.isBlank()){
+            return true;
+        }
+        return true;
+    }
+
+    private boolean isLimitValid() {
+        
+        String limit = limitJTextField.getText().replace(" ", "");
+        if(limit.isBlank()){
+            return true;
+        }
+        try {
+            
+            Integer year = Integer.valueOf(limit);
+            if(Integer.compare(year, 0) >=0 ){
+                return true;
+            }
+            return false;
+            
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    
+    private boolean isSeatCapacityValid() {
+        
+        String seats = seatCapacitySelectedJTextField.getText().replace(" ", "");
+        if(seats.isBlank()){
+            return false;
+        }
+        try{
+            Integer seatCapacity = Integer.valueOf(seats);
+            if(Integer.compare(seatCapacity, 0) > 0){
+                return true;
+            }
+            return false;
+        }catch (Exception e){
+            return false;
+        }
+    }    
+    
+    private boolean isManufacturedYrValid() {
+        
+        String manufacturedYr = manufacturedYrJTextField.getText().replace(" ", "");
+        if(manufacturedYr.isBlank()){
+            return false;
+        }
+        try {
+            Integer year = Integer.valueOf(manufacturedYr);
+            if(Integer.compare(year, 0) >0 && Integer.compare(2022, year) > 0){
+                return true;
+            }
+            return false;
+        } catch (Exception e){
+            return false;
+        }
+    }
+    
+    private boolean isSearchedManufacturedYrValid() {
+        
+        String manufacturedYr = manufacturedYrTextField.getText().replace(" ", "");
+        if(manufacturedYr.isBlank()){
+            return true;
+        }
+        try {
+            Integer year = Integer.valueOf(manufacturedYr);
+            if(Integer.compare(year, 0) >0 && Integer.compare(2022, year) > 0){
+                return true;
+            }
+            return false;
+        } catch (Exception e){
+            return false;
+        }
+    }
+    
+    private boolean isSeatMinValid() {
+        
+        String seatMin = seatCapacityJTextField.getText().replace(" ", "");
+        if(seatMin.isBlank()){
+            return true;
+        }
+        try {
+            
+            Integer year = Integer.valueOf(seatMin);
+            if(Integer.compare(year, 0) >=0 ){
+                return true;
+            }
+            return false;
+            
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    
+    private boolean isSeatMaxValid() {
+        
+        String seatMax = seatCapacityMaxJTextField.getText().replace(" ", "");
+        if(seatMax.isBlank()){
+            return true;
+        }
+        try {
+            
+            Integer year = Integer.valueOf(seatMax);
+            if(Integer.compare(year, 0) >=0 ){
+                return true;
+            }
+            return false;
+            
+        } catch (Exception e) {
+            return false;
+        }
+    }    
+    
+    private boolean isDistanceValid() {
+        
+        String distance = currentDistanceJTextField.getText().replace(" ", "");
+        if(distance.isBlank()){
+            return false;
+        }
+        try{
+            Double distanceValue = Double.valueOf(distance);
+            if(Double.compare(distanceValue, 0) >0){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(Exception e){
+            return false;
+        }
+    } 
+    
+    private boolean isSearchedSerialNoValid() {
+        
+        String serialNo = serialNoJTextField.getText().replace(" ", "");
+        if(serialNo.isBlank()){
+            return true;
+        }
+        return true;
+    }
+  
+    private boolean isSerialNoValid() {
+        
+        String serialNo = serialNoJTextField1.getText().replace(" ", "");
+        if(serialNo.isBlank()){
+            return false;
+        }
+        if(isSerialNounique()){
+            return true;
+        }
+        return false;
+    }   
+    
     private boolean isSerialNounique() {
         
         boolean serianNoUnique = true;
@@ -810,15 +1166,7 @@ public class FilterJPanel extends javax.swing.JPanel {
             operatingCityJComboBox.addItem(city);
         }
         
-    }
-    
-    private String formatDate(Date date){
-       
-        String pattern = "yyyy-MM-dd HH:mm:ss";
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
-        return simpleDateFormat.format(date);
-    }    
+    }   
         
     private void resetFilters() {
         availablilityJComboBox.setSelectedIndex(0);

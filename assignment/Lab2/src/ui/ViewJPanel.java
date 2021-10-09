@@ -5,6 +5,7 @@
  */
 package ui;
 
+import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -164,12 +165,18 @@ public class ViewJPanel extends javax.swing.JPanel {
 
         currentDistanceJLabel.setText("Current Distance:");
 
+        currentDistanceJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                currentDistanceJTextFieldKeyReleased(evt);
+            }
+        });
+
         seatCapacityJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         seatCapacityJLabel.setText("Seat Capacity:");
 
-        seatCapacityJTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                seatCapacityJTextFieldActionPerformed(evt);
+        seatCapacityJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                seatCapacityJTextFieldKeyReleased(evt);
             }
         });
 
@@ -179,12 +186,18 @@ public class ViewJPanel extends javax.swing.JPanel {
         serialNoJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         serialNoJLabel.setText("Serial No:");
 
+        serialNoJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                serialNoJTextFieldKeyReleased(evt);
+            }
+        });
+
         modelNoJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         modelNoJLabel.setText("Model No:");
 
-        modelNoJTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modelNoJTextFieldActionPerformed(evt);
+        modelNoJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                modelNoJTextFieldKeyReleased(evt);
             }
         });
 
@@ -193,6 +206,12 @@ public class ViewJPanel extends javax.swing.JPanel {
 
         manufacturedYrJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         manufacturedYrJLabel.setText("Manufactured Yr:");
+
+        manufacturedYrJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                manufacturedYrJTextFieldKeyReleased(evt);
+            }
+        });
 
         maintainanceExperiedJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         maintainanceExperiedJLabel.setText("Maintainance Exp:");
@@ -362,14 +381,6 @@ public class ViewJPanel extends javax.swing.JPanel {
 
     }// </editor-fold>//GEN-END:initComponents
 
-    private void seatCapacityJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatCapacityJTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_seatCapacityJTextFieldActionPerformed
-
-    private void modelNoJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modelNoJTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_modelNoJTextFieldActionPerformed
-
     private void viewJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewJButtonActionPerformed
         // TODO add your handling code here:
         int userSelectedIndex = viewCarsTable.getSelectedRow();
@@ -398,23 +409,89 @@ public class ViewJPanel extends javax.swing.JPanel {
 
     private void updateJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateJButtonActionPerformed
         // TODO add your handling code here:
-        if(!isDataNotUpdatedByUser()){
-            
-            if(isSerialNounique()){
-                setUpdatedData();   
-                int selectedRow = viewCarsTable.getSelectedRow();
-                populateTable();
-                viewCarsTable.setRowSelectionInterval(selectedRow, selectedRow);
-                JOptionPane.showMessageDialog(this, "Changes has been Successfully saved");
-            }else{
-                JOptionPane.showMessageDialog(this, "Changes not Saved. Serial No already Existed");                
-            }
+        
+        currentDistanceJTextFieldKeyReleased(null);
+        serialNoJTextFieldKeyReleased(null);
+        manufacturedYrJTextFieldKeyReleased(null);
+        seatCapacityJTextFieldKeyReleased(null);
+        modelNoJTextFieldKeyReleased(null);
+        
+        if(isDataEnteredValid()){
+            if(!isDataNotUpdatedByUser()){
 
+                if(isSerialNounique()){
+                    setUpdatedData();   
+                    int selectedRow = viewCarsTable.getSelectedRow();
+                    populateTable();
+                    viewCarsTable.setRowSelectionInterval(selectedRow, selectedRow);
+                    JOptionPane.showMessageDialog(this, "Changes has been Successfully saved");
+                }else{
+                    JOptionPane.showMessageDialog(this, "Changes not Saved. Serial No already Existed");                
+                }
+
+            }else{
+                JOptionPane.showMessageDialog(this, "No changes has been made");
+            }
         }else{
-            JOptionPane.showMessageDialog(this, "No changes has been made");
+            JOptionPane.showMessageDialog(this, "Please enter valid data");
         }
     }//GEN-LAST:event_updateJButtonActionPerformed
 
+    private boolean isDataEnteredValid() {
+        
+        if(isDistanceValid() && isSeatCapacityValid() && isSerialNoValid() &&
+                isModelNoValid() && isManufacturedYrValid()){
+            return true;
+        }
+        return false;
+    }
+    
+    private void currentDistanceJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_currentDistanceJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isDistanceValid()) {
+            currentDistanceJTextField.setBackground(Color.WHITE);
+        }else{
+            currentDistanceJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_currentDistanceJTextFieldKeyReleased
+
+    private void serialNoJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serialNoJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isSerialNoValid()){
+            serialNoJTextField.setBackground(Color.WHITE);
+        }else{
+            serialNoJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_serialNoJTextFieldKeyReleased
+
+    private void manufacturedYrJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_manufacturedYrJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isManufacturedYrValid()){
+            manufacturedYrJTextField.setBackground(Color.WHITE);
+        }else{
+            manufacturedYrJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_manufacturedYrJTextFieldKeyReleased
+
+    private void seatCapacityJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_seatCapacityJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isSeatCapacityValid()){
+            seatCapacityJTextField.setBackground(Color.WHITE);
+        }else {
+            seatCapacityJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_seatCapacityJTextFieldKeyReleased
+
+    private void modelNoJTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_modelNoJTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(isModelNoValid()) {
+            modelNoJTextField.setBackground(Color.WHITE);
+        }else{
+            modelNoJTextField.setBackground(Color.RED);
+        }
+    }//GEN-LAST:event_modelNoJTextFieldKeyReleased
+
+    
     private boolean isSerialNounique() {
         
         boolean serianNoUnique = true;
@@ -431,6 +508,18 @@ public class ViewJPanel extends javax.swing.JPanel {
         }
         
         return serianNoUnique;
+    }
+    
+    private boolean isSerialNoValid() {
+        
+        String serialNo = serialNoJTextField.getText().replace(" ", "");
+        if(serialNo.isBlank()){
+            return false;
+        }
+        if(isSerialNounique()){
+            return true;
+        }
+        return false;
     }
     
     private void setUpdatedData(){
@@ -523,7 +612,68 @@ public class ViewJPanel extends javax.swing.JPanel {
         }
         
     }
+    
+    private boolean isDistanceValid() {
+        
+        String distance = currentDistanceJTextField.getText().replace(" ", "");
+        if(distance.isBlank()){
+            return false;
+        }
+        try{
+            Double distanceValue = Double.valueOf(distance);
+            if(Double.compare(distanceValue, 0) >0){
+                return true;
+            }else{
+                return false;
+            }
+        }catch(Exception e){
+            return false;
+        }
+    }
 
+    private boolean isManufacturedYrValid() {
+        
+        String manufacturedYr = manufacturedYrJTextField.getText().replace(" ", "");
+        if(manufacturedYr.isBlank()){
+            return false;
+        }
+        try {
+            Integer year = Integer.valueOf(manufacturedYr);
+            if(Integer.compare(year, 0) >0 && Integer.compare(2022, year) > 0){
+                return true;
+            }
+            return false;
+        } catch (Exception e){
+            return false;
+        }
+    }    
+    
+    private boolean isSeatCapacityValid() {
+        
+        String seats = seatCapacityJTextField.getText().replace(" ", "");
+        if(seats.isBlank()){
+            return false;
+        }
+        try{
+            Integer seatCapacity = Integer.valueOf(seats);
+            if(Integer.compare(seatCapacity, 0) > 0){
+                return true;
+            }
+            return false;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+    private boolean isModelNoValid() {
+        
+        String modelNo = modelNoJTextField.getText().replace(" ", "");
+        if(modelNo.isBlank()){
+            return false;
+        }
+        return true;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox availabilityJCheckBox;
     private javax.swing.JLabel availabilityJLabel;

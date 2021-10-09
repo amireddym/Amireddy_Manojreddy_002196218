@@ -2,8 +2,6 @@ package ui;
 
 import java.awt.Color;
 import java.util.Date;
-import java.util.List;
-import javax.swing.ComboBoxModel;
 import javax.swing.JOptionPane;
 import model.Car;
 import model.CarsInformation;
