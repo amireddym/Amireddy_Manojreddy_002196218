@@ -65,6 +65,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         if(carsInformation.getLastUpdatedOn()!=null){
             lastUpdatedOnDataJLabel.setText(formatDate(carsInformation.getLastUpdatedOn()));
         }
+        countDataJLabel.setText(String.valueOf(carsInformation.getCars().size()));
         
     }
 
@@ -112,6 +113,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         updateJButton = new javax.swing.JButton();
         maintainanceExpiryJCheckBox = new javax.swing.JCheckBox();
         headerDisplayJLabel = new javax.swing.JLabel();
+        countJLabel = new javax.swing.JLabel();
+        countDataJLabel = new javax.swing.JLabel();
 
         viewCarsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -322,6 +325,11 @@ public class ViewJPanel extends javax.swing.JPanel {
         headerDisplayJLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         headerDisplayJLabel.setText("Displaying all the Fleet of Cars currently on UBER");
 
+        countJLabel.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        countJLabel.setText("Count :");
+
+        countDataJLabel.setText("0");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -333,6 +341,10 @@ public class ViewJPanel extends javax.swing.JPanel {
                         .addComponent(fleetUpdatedJLabel)
                         .addGap(18, 18, 18)
                         .addComponent(lastUpdatedOnDataJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69)
+                        .addComponent(countJLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(countDataJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(viewJButton)
                         .addGap(18, 18, 18)
@@ -353,6 +365,8 @@ public class ViewJPanel extends javax.swing.JPanel {
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {deleteJButton, viewJButton});
 
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {countDataJLabel, countJLabel});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -363,9 +377,12 @@ public class ViewJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lastUpdatedOnDataJLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fleetUpdatedJLabel, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lastUpdatedOnDataJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fleetUpdatedJLabel)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(countJLabel)
+                                .addComponent(countDataJLabel))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(323, 323, 323)
                         .addComponent(deleteJButton))
@@ -378,6 +395,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {fleetUpdatedJLabel, lastUpdatedOnDataJLabel});
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {countDataJLabel, countJLabel});
 
     }// </editor-fold>//GEN-END:initComponents
 
@@ -677,6 +696,8 @@ public class ViewJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox availabilityJCheckBox;
     private javax.swing.JLabel availabilityJLabel;
+    private javax.swing.JLabel countDataJLabel;
+    private javax.swing.JLabel countJLabel;
     private javax.swing.JLabel currentDistanceJLabel;
     private javax.swing.JTextField currentDistanceJTextField;
     private javax.swing.JButton deleteJButton;

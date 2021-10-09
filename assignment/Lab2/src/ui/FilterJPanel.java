@@ -64,7 +64,7 @@ public class FilterJPanel extends javax.swing.JPanel {
             model.addRow(row);
         }
         filteredLastUpdatedJTextField.setText(formatDate(carsInformation.getLastUpdatedOn()));
-        
+        countDataJLabel.setText(String.valueOf(carsInformation.getCars().size()));
     }
     
     private String formatDate(Date date){
@@ -151,6 +151,8 @@ public class FilterJPanel extends javax.swing.JPanel {
         lastUpdatedFilteredJLabel = new javax.swing.JLabel();
         filteredLastUpdatedJTextField = new javax.swing.JLabel();
         deleteJButton = new javax.swing.JButton();
+        countJLabel = new javax.swing.JLabel();
+        countDataJLabel = new javax.swing.JLabel();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -453,6 +455,10 @@ public class FilterJPanel extends javax.swing.JPanel {
             }
         });
 
+        countJLabel.setText("Count :");
+
+        countDataJLabel.setText("0");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -524,6 +530,10 @@ public class FilterJPanel extends javax.swing.JPanel {
                 .addComponent(lastUpdatedFilteredJLabel)
                 .addGap(39, 39, 39)
                 .addComponent(filteredLastUpdatedJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(96, 96, 96)
+                .addComponent(countJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(countDataJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(viewJButton)
                 .addGap(18, 18, 18)
@@ -597,7 +607,10 @@ public class FilterJPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(viewJButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(viewJButton)
+                        .addComponent(countJLabel)
+                        .addComponent(countDataJLabel))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lastUpdatedFilteredJLabel)
                         .addComponent(filteredLastUpdatedJTextField)
@@ -680,6 +693,7 @@ public class FilterJPanel extends javax.swing.JPanel {
             return;
         }
         filteredLastUpdatedJTextField.setText(formatDate(filterDataLastUpdated));
+        countDataJLabel.setText(String.valueOf(cars.size()));
     }
     
     private List<Car> getFilteredCars() {
@@ -1187,6 +1201,8 @@ public class FilterJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel availabilityJLabel1;
     private javax.swing.JComboBox<String> availablilityJComboBox;
     private javax.swing.JComboBox<String> cityJComboBox;
+    private javax.swing.JLabel countDataJLabel;
+    private javax.swing.JLabel countJLabel;
     private javax.swing.JLabel currentDistanceJLabel;
     private javax.swing.JTextField currentDistanceJTextField;
     private javax.swing.JButton deleteJButton;
