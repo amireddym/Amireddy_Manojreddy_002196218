@@ -329,20 +329,19 @@ public class ViewJPanel extends javax.swing.JPanel {
                         .addComponent(manufacturedYrJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(maintainanceExperiedJLabel)
                         .addComponent(maintainanceExpiryJCheckBox)))
-                .addGap(18, 18, 18)
                 .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(userSelectedJPanelLayout.createSequentialGroup()
                         .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(leaseTypeJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(leaseTypeJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(66, Short.MAX_VALUE))
+                        .addContainerGap(75, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userSelectedJPanelLayout.createSequentialGroup()
-                        .addGap(0, 44, Short.MAX_VALUE)
+                        .addGap(0, 53, Short.MAX_VALUE)
                         .addComponent(updateJButton)
                         .addGap(20, 20, 20))))
         );
 
-        headerDisplayJLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        headerDisplayJLabel.setFont(new java.awt.Font("Kokonor", 1, 18)); // NOI18N
         headerDisplayJLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         headerDisplayJLabel.setText("Displaying all the Fleet of Cars currently on UBER");
 

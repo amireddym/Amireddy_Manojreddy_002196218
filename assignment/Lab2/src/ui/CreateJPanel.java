@@ -82,7 +82,7 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(0, 204, 204));
 
-        createJLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        createJLabel.setFont(new java.awt.Font("Kokonor", 3, 18)); // NOI18N
         createJLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         createJLabel.setText("Add New Car to Fleet");
 

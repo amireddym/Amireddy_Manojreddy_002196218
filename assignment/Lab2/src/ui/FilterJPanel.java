@@ -172,7 +172,7 @@ public class FilterJPanel extends javax.swing.JPanel {
         jCheckBoxMenuItem2.setSelected(true);
         jCheckBoxMenuItem2.setText("jCheckBoxMenuItem2");
 
-        filterHeaderDisplayJLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        filterHeaderDisplayJLabel.setFont(new java.awt.Font("Kokonor", 1, 18)); // NOI18N
         filterHeaderDisplayJLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         filterHeaderDisplayJLabel.setText("Filter data by using the Below fields");
 
@@ -656,7 +656,7 @@ public class FilterJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(259, 259, 259)
                     .addComponent(fleetUpdatedJLabel)
-                    .addContainerGap(437, Short.MAX_VALUE)))
+                    .addContainerGap(446, Short.MAX_VALUE)))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {filteredLastUpdatedJTextField, lastUpdatedFilteredJLabel});
