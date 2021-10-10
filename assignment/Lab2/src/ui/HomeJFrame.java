@@ -24,7 +24,9 @@ public class HomeJFrame extends javax.swing.JFrame {
      */
     public HomeJFrame() {
         initComponents();
-        this.carsInformation = new CarsInformation(DataSerializer.serializeData());        
+        this.carsInformation = new CarsInformation(DataSerializer.serializeData()); 
+        HomeJPanel homeJPanel = new HomeJPanel();
+        homeSplitPane.setRightComponent(homeJPanel);
     }
 
     /**

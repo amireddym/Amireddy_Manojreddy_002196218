@@ -953,7 +953,7 @@ public class FilterJPanel extends javax.swing.JPanel {
     private boolean isModelNoValid() {
         
         String modelNo = modelNoJTextField1.getText().replace(" ", "");
-        if(modelNo.isBlank()){
+        if(modelNo.isBlank() || !modelNo.matches("^[A-Za-z0-9]*$")){
             return false;
         }
         return true;
@@ -961,9 +961,12 @@ public class FilterJPanel extends javax.swing.JPanel {
     
     private boolean isSearchedModelNoValid() {
         
-        String modelNo = modelNoJTextField1.getText().replace(" ", "");
+        String modelNo = modelNoJTextField.getText().replace(" ", "");
         if(modelNo.isBlank()){
             return true;
+        }
+        if(!modelNo.matches("^[A-Za-z0-9]*$")){
+            return false;
         }
         return true;
     }
