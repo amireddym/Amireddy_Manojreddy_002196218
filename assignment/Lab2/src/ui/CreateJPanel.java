@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 import model.Car;
 import model.CarsInformation;
 import model.City;
+import model.LeaseType;
 import model.Manufacturer;
 
 /**
@@ -41,6 +42,11 @@ public class CreateJPanel extends javax.swing.JPanel {
             operatingCityJComboBox.addItem(city);
         }
         
+        String[] leaseTypes = LeaseType.getAllLeaseTypes();
+        for(String leaseType:leaseTypes){
+            leaseTypeJComboBox.addItem(leaseType);
+        }
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,6 +77,8 @@ public class CreateJPanel extends javax.swing.JPanel {
         addJButton = new javax.swing.JButton();
         operatingCityJComboBox = new javax.swing.JComboBox<>();
         manufacturerJComboBox = new javax.swing.JComboBox<>();
+        leaseTypeJComboBox = new javax.swing.JComboBox<>();
+        leaseTypeJLabel = new javax.swing.JLabel();
 
         createJLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         createJLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -145,6 +153,9 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
+        leaseTypeJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        leaseTypeJLabel.setText("Lease Type:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -167,27 +178,40 @@ public class CreateJPanel extends javax.swing.JPanel {
                                     .addComponent(availabilityJCheckBox)
                                     .addComponent(manufacturedYearJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
                                     .addComponent(manufacturerJComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(106, 106, 106)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(seatCapacityJLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                                    .addComponent(serialNoJLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
-                                    .addComponent(modelNoJLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(operatingCityJLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(maintainanceJCheckBox))
+                                .addGap(106, 106, 106))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(maintainanceJCheckBox)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(operatingCityJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                            .addComponent(leaseTypeJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(operatingCityJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(seatCapacityJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
                                 .addComponent(serialNoJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-                                .addComponent(modelNoJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(345, 345, 345)
-                        .addComponent(addJButton))
+                                .addComponent(modelNoJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))
+                            .addComponent(leaseTypeJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(295, 295, 295)
-                        .addComponent(createJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(115, Short.MAX_VALUE))
+                        .addComponent(createJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(535, Short.MAX_VALUE)
+                                .addComponent(modelNoJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(serialNoJLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                                    .addComponent(seatCapacityJLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))))
+                        .addGap(150, 150, 150)))
+                .addContainerGap(182, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(367, 367, 367)
+                .addComponent(addJButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {distanceJTextField, manufacturedYearJTextField});
@@ -224,13 +248,20 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(manufacturedYearJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(operatingCityJLabel)
                     .addComponent(operatingCityJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(maintainanceExperiedJLabel)
-                    .addComponent(maintainanceJCheckBox))
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(maintainanceExperiedJLabel)
+                            .addComponent(maintainanceJCheckBox)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(leaseTypeJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(leaseTypeJLabel))))
+                .addGap(40, 40, 40)
                 .addComponent(addJButton)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {distanceJTextField, manufacturedYearJTextField});
@@ -396,11 +427,13 @@ public class CreateJPanel extends javax.swing.JPanel {
     
     private void addCarToFleet() {
         
-        carsInformation.add(new Car(Double.valueOf(distanceJTextField.getText().replace(" ", "")), availabilityJCheckBox.isSelected(), 
+        carsInformation.add(
+                new Car(Double.valueOf(distanceJTextField.getText().replace(" ", "")), availabilityJCheckBox.isSelected(), 
                 Manufacturer.valueOf(String.valueOf(manufacturerJComboBox.getSelectedItem())), manufacturedYearJTextField.getText().replace(" ",""), 
                 Integer.valueOf(seatCapacityJTextField.getText().replace(" ","")),serialNoJTextField.getText().replace(" ",""),
                 modelNoJTextField.getText().replace(" ", ""), new Date(), 
-                City.valueOf(String.valueOf(operatingCityJComboBox.getSelectedItem())), maintainanceJCheckBox.isSelected()));
+                City.valueOf(String.valueOf(operatingCityJComboBox.getSelectedItem())), maintainanceJCheckBox.isSelected(),
+                LeaseType.valueOf(String.valueOf(leaseTypeJComboBox.getSelectedItem()))));
     }
     
     private void resetUi() {
@@ -414,6 +447,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         modelNoJTextField.setText("");
         operatingCityJComboBox.setSelectedIndex(0);
         maintainanceJCheckBox.setSelected(false);
+        leaseTypeJComboBox.setSelectedIndex(0);
         
     }
 
@@ -424,6 +458,8 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel createJLabel;
     private javax.swing.JLabel currentDistanceJLabel;
     private javax.swing.JTextField distanceJTextField;
+    private javax.swing.JComboBox<String> leaseTypeJComboBox;
+    private javax.swing.JLabel leaseTypeJLabel;
     private javax.swing.JLabel maintainanceExperiedJLabel;
     private javax.swing.JCheckBox maintainanceJCheckBox;
     private javax.swing.JLabel manufacturedYearJLabel;

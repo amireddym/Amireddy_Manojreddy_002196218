@@ -22,8 +22,10 @@ public class Car implements Serializable,Comparable<Car>{
     private Date lastUpdated;
     private City operatingCity;
     private boolean maintainanceCertificateExpired;
+    private LeaseType leaseType;
 
-    public Car(double distanceFromUser, boolean availability, Manufacturer manufacturer, String manufacturedYear, int seatCapacity, String serialNumber, String modelNumber, Date lastUpdated, City operatingCity, boolean maintainanceCertificateExpired) {
+    public Car(double distanceFromUser, boolean availability, Manufacturer manufacturer, String manufacturedYear, int seatCapacity, String serialNumber, String modelNumber, Date lastUpdated, City operatingCity, boolean maintainanceCertificateExpired,
+        LeaseType leaseType) {
         
         this.uuid = UUID.randomUUID();
         this.distanceFromUser = distanceFromUser;
@@ -37,6 +39,7 @@ public class Car implements Serializable,Comparable<Car>{
         this.lastUpdated = lastUpdated;
         this.operatingCity = operatingCity;
         this.maintainanceCertificateExpired = maintainanceCertificateExpired;
+        this.leaseType = leaseType;
     }
 
     public UUID getUuid() {
@@ -135,6 +138,14 @@ public class Car implements Serializable,Comparable<Car>{
         this.createdDate = createdDate;
     }
 
+    public LeaseType getLeaseType() {
+        return leaseType;
+    }
+
+    public void setLeaseType(LeaseType leaseType) {
+        this.leaseType = leaseType;
+    }
+
     @Override
     public String toString() {
         return String.valueOf(distanceFromUser);
@@ -152,21 +163,23 @@ public class Car implements Serializable,Comparable<Car>{
                 && this.distanceFromUser == car.getDistanceFromUser() && this.serialNumber.contentEquals(car.getSerialNumber())
                 && this.modelNumber.contentEquals(car.getModelNumber()) && this.manufacturedYear.contentEquals(car.getManufacturedYear()) 
                 && this.manufacturer.name().contentEquals(car.getManufacturer().name()) 
-                && this.operatingCity.name().contentEquals(car.getOperatingCity().name()) ){
+                && this.operatingCity.name().contentEquals(car.getOperatingCity().name()) 
+                && this.leaseType.name().contentEquals(car.getLeaseType().name())){
             return true;
         }
         return false;
     }
     
     public boolean objectEqualityCheck(double distanceFromUser, boolean availability, Manufacturer manufacturer, String manufacturedYear, int seatCapacity, String serialNumber, 
-            String modelNumber, City operatingCity, boolean maintainanceCertificateExpired){
+            String modelNumber, City operatingCity, boolean maintainanceCertificateExpired, LeaseType leaseType){
         
         if(this.availability==availability && this.seatCapacity == seatCapacity && 
                 this.maintainanceCertificateExpired==maintainanceCertificateExpired
                 && this.distanceFromUser == distanceFromUser && this.serialNumber.contentEquals(serialNumber)
                 && this.modelNumber.contentEquals(modelNumber) && this.manufacturedYear.contentEquals(manufacturedYear) 
                 && this.manufacturer.name().contentEquals(manufacturer.name()) 
-                && this.operatingCity.name().contentEquals(operatingCity.name()) ){
+                && this.operatingCity.name().contentEquals(operatingCity.name())
+                && this.leaseType.name().contentEquals(leaseType.name())){
             return true;
         }
         return false;

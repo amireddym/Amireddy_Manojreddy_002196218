@@ -8,12 +8,12 @@ package ui;
 import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Car;
 import model.CarsInformation;
 import model.City;
+import model.LeaseType;
 import model.Manufacturer;
 
 /**
@@ -46,7 +46,7 @@ public class ViewJPanel extends javax.swing.JPanel {
 
         for(Car car:carsInformation.getCars()){
             
-            Object[] row = new Object[11];
+            Object[] row = new Object[12];
             row[0] = car;
             row[1] = car.isAvailability();
             row[2] = car.getManufacturer().name();
@@ -58,6 +58,7 @@ public class ViewJPanel extends javax.swing.JPanel {
             row[8] = formatDate(car.getLastUpdated());            
             row[9] = car.getOperatingCity().toString();
             row[10] = car.isMaintainanceCertificateExpired();
+            row[11] = car.getLeaseType().toString();
             
             model.addRow(row);
         }
@@ -112,6 +113,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         operatingCityJComboBox = new javax.swing.JComboBox<>();
         updateJButton = new javax.swing.JButton();
         maintainanceExpiryJCheckBox = new javax.swing.JCheckBox();
+        leaseTypeJLabel = new javax.swing.JLabel();
+        leaseTypeJComboBox = new javax.swing.JComboBox<>();
         headerDisplayJLabel = new javax.swing.JLabel();
         countJLabel = new javax.swing.JLabel();
         countDataJLabel = new javax.swing.JLabel();
@@ -121,14 +124,14 @@ public class ViewJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Distance", "Availability", "Manufacturer", "Manufactured-Yr", "Seat Capacity", "Serial No", "Model No", "Created On", "Updated On", "City", "Maintaince Cert Exp"
+                "Distance", "Availability", "Manufacturer", "Manufactured-Yr", "Seat Capacity", "Serial No", "Model No", "Created On", "Updated On", "City", "Maintaince Cert Exp", "Lease Type"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Boolean.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.String.class, java.lang.Boolean.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -229,29 +232,36 @@ public class ViewJPanel extends javax.swing.JPanel {
             }
         });
 
+        leaseTypeJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        leaseTypeJLabel.setText("Lease Type:");
+
         javax.swing.GroupLayout userSelectedJPanelLayout = new javax.swing.GroupLayout(userSelectedJPanel);
         userSelectedJPanel.setLayout(userSelectedJPanelLayout);
         userSelectedJPanelLayout.setHorizontalGroup(
             userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(userSelectedJPanelLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(userSelectedJPanelLayout.createSequentialGroup()
-                        .addComponent(currentDistanceJLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(currentDistanceJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(userSelectedJPanelLayout.createSequentialGroup()
-                        .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(manufacturedYrJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(serialNoJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(serialNoJTextField)
-                            .addComponent(manufacturedYrJTextField))))
-                .addGap(124, 124, 124)
                 .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(updateJButton)
                     .addGroup(userSelectedJPanelLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(userSelectedJPanelLayout.createSequentialGroup()
+                                .addComponent(currentDistanceJLabel)
+                                .addGap(18, 18, 18)
+                                .addComponent(currentDistanceJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(userSelectedJPanelLayout.createSequentialGroup()
+                                .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(leaseTypeJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(manufacturedYrJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(serialNoJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGap(18, 18, 18)
+                                .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(serialNoJTextField)
+                                    .addComponent(manufacturedYrJTextField)
+                                    .addGroup(userSelectedJPanelLayout.createSequentialGroup()
+                                        .addComponent(leaseTypeJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addGap(124, 124, 124)
                         .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(userSelectedJPanelLayout.createSequentialGroup()
                                 .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -266,7 +276,7 @@ public class ViewJPanel extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(maintainanceExpiryJCheckBox)))
                         .addGap(56, 56, 56)
-                        .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(userSelectedJPanelLayout.createSequentialGroup()
                                 .addComponent(operatingCityJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -278,7 +288,10 @@ public class ViewJPanel extends javax.swing.JPanel {
                             .addGroup(userSelectedJPanelLayout.createSequentialGroup()
                                 .addComponent(manufacturerJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(manufacturerJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(manufacturerJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(userSelectedJPanelLayout.createSequentialGroup()
+                        .addGap(393, 393, 393)
+                        .addComponent(updateJButton)))
                 .addGap(42, 51, Short.MAX_VALUE))
         );
 
@@ -317,8 +330,16 @@ public class ViewJPanel extends javax.swing.JPanel {
                         .addComponent(maintainanceExperiedJLabel)
                         .addComponent(maintainanceExpiryJCheckBox)))
                 .addGap(18, 18, 18)
-                .addComponent(updateJButton)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(userSelectedJPanelLayout.createSequentialGroup()
+                        .addGroup(userSelectedJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(leaseTypeJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(leaseTypeJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(66, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userSelectedJPanelLayout.createSequentialGroup()
+                        .addGap(0, 44, Short.MAX_VALUE)
+                        .addComponent(updateJButton)
+                        .addGap(20, 20, 20))))
         );
 
         headerDisplayJLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
@@ -557,6 +578,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         userSelectedCar.setSeatCapacity(Integer.valueOf(seatCapacityJTextField.getText()));
         userSelectedCar.setSerialNumber(serialNoJTextField.getText());
         userSelectedCar.setLastUpdated(new Date());
+        userSelectedCar.setLeaseType(LeaseType.valueOf((String) leaseTypeJComboBox.getSelectedItem()));
         carsInformation.setLastUpdatedOn(new Date());
 
     }
@@ -569,7 +591,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         return userSelectedCar.objectEqualityCheck(Double.valueOf(currentDistanceJTextField.getText().replace(" ","")), availabilityJCheckBox.isSelected(), 
                 Manufacturer.valueOf((String) manufacturerJComboBox.getSelectedItem()), manufacturedYrJTextField.getText().replace(" ", ""), 
                 Integer.valueOf(seatCapacityJTextField.getText().replace(" ","")), serialNoJTextField.getText().replace(" ",""), modelNoJTextField.getText().replace(" ",""), 
-                City.valueOf((String) operatingCityJComboBox.getSelectedItem()), maintainanceExpiryJCheckBox.isSelected());
+                City.valueOf((String) operatingCityJComboBox.getSelectedItem()), maintainanceExpiryJCheckBox.isSelected(),
+                LeaseType.valueOf((String) leaseTypeJComboBox.getSelectedItem()));
     }
     
     private void deleteSelectedCarData(int userSelectedIndex) {
@@ -613,6 +636,7 @@ public class ViewJPanel extends javax.swing.JPanel {
         
         manufacturerJComboBox.setSelectedItem(car.getManufacturer().name());
         operatingCityJComboBox.setSelectedItem(car.getOperatingCity().name());
+        leaseTypeJComboBox.setSelectedItem(car.getLeaseType().name());
         
     }
     
@@ -628,6 +652,12 @@ public class ViewJPanel extends javax.swing.JPanel {
         String[] operatingCities = City.getOperatingCitiesArray();
         for(String city:operatingCities){
             operatingCityJComboBox.addItem(city);
+        }
+        
+        leaseTypeJComboBox.removeAllItems();
+        String[] leaseTypes = LeaseType.getAllLeaseTypes();
+        for(String leaseType:leaseTypes){
+            leaseTypeJComboBox.addItem(leaseType);
         }
         
     }
@@ -705,6 +735,8 @@ public class ViewJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel headerDisplayJLabel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lastUpdatedOnDataJLabel;
+    private javax.swing.JComboBox<String> leaseTypeJComboBox;
+    private javax.swing.JLabel leaseTypeJLabel;
     private javax.swing.JLabel maintainanceExperiedJLabel;
     private javax.swing.JCheckBox maintainanceExpiryJCheckBox;
     private javax.swing.JLabel manufacturedYrJLabel;

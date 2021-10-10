@@ -36,15 +36,16 @@
                                   <Component id="manufacturedYearJTextField" linkSize="1" alignment="0" pref="132" max="32767" attributes="0"/>
                                   <Component id="manufacturerJComboBox" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="106" pref="106" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="seatCapacityJLabel" linkSize="3" alignment="1" pref="118" max="32767" attributes="0"/>
-                                  <Component id="serialNoJLabel" linkSize="3" alignment="1" pref="107" max="32767" attributes="0"/>
-                                  <Component id="modelNoJLabel" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="operatingCityJLabel" alignment="1" max="32767" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="maintainanceJCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="maintainanceJCheckBox" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="operatingCityJLabel" alignment="2" pref="186" max="32767" attributes="0"/>
+                          <Component id="leaseTypeJLabel" alignment="2" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -54,18 +55,36 @@
                               <Component id="serialNoJTextField" pref="132" max="32767" attributes="0"/>
                               <Component id="modelNoJTextField" pref="132" max="32767" attributes="0"/>
                           </Group>
+                          <Component id="leaseTypeJComboBox" min="-2" pref="132" max="-2" attributes="0"/>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="345" max="-2" attributes="0"/>
-                      <Component id="addJButton" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="295" max="-2" attributes="0"/>
                       <Component id="createJLabel" min="-2" pref="219" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace pref="535" max="32767" attributes="0"/>
+                              <Component id="modelNoJLabel" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="serialNoJLabel" linkSize="3" alignment="1" pref="107" max="32767" attributes="0"/>
+                                  <Component id="seatCapacityJLabel" linkSize="3" alignment="1" pref="118" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="150" pref="150" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="115" max="32767" attributes="0"/>
+              <EmptySpace pref="182" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="367" max="-2" attributes="0"/>
+              <Component id="addJButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -104,14 +123,25 @@
                   <Component id="operatingCityJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="operatingCityJComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="maintainanceExperiedJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="maintainanceJCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="maintainanceExperiedJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="maintainanceJCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="leaseTypeJComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="leaseTypeJLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Component id="addJButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="26" max="32767" attributes="0"/>
+              <EmptySpace pref="106" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -251,6 +281,22 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="leaseTypeJComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="leaseTypeJLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Lease Type:"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
