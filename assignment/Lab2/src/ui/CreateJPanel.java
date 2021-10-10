@@ -359,7 +359,7 @@ public class CreateJPanel extends javax.swing.JPanel {
     private boolean isSerialNoValid() {
         
         String serialNo = serialNoJTextField.getText().replace(" ", "");
-        if(serialNo.isBlank()){
+        if(serialNo.isBlank() || !serialNo.matches("^[A-Za-z0-9]*$")){
             return false;
         }
         if(isSerialNounique()){
@@ -383,7 +383,7 @@ public class CreateJPanel extends javax.swing.JPanel {
     private boolean isModelNoValid() {
         
         String modelNo = modelNoJTextField.getText().replace(" ", "");
-        if(modelNo.isBlank()){
+        if(modelNo.isBlank() || !modelNo.matches("^[A-Za-z0-9]*$")){
             return false;
         }
         return true;

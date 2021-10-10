@@ -1100,13 +1100,16 @@ public class FilterJPanel extends javax.swing.JPanel {
         if(serialNo.isBlank()){
             return true;
         }
+        if(!serialNo.matches("^[A-Za-z0-9]*$")){
+            return false;
+        }
         return true;
     }
   
     private boolean isSerialNoValid() {
         
         String serialNo = serialNoJTextField1.getText().replace(" ", "");
-        if(serialNo.isBlank()){
+        if(serialNo.isBlank() || !serialNo.matches("^[A-Za-z0-9]*$")){
             return false;
         }
         if(isSerialNounique()){
