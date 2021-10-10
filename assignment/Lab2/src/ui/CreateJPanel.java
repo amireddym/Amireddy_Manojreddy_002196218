@@ -80,6 +80,8 @@ public class CreateJPanel extends javax.swing.JPanel {
         leaseTypeJComboBox = new javax.swing.JComboBox<>();
         leaseTypeJLabel = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 204, 204));
+
         createJLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         createJLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         createJLabel.setText("Add New Car to Fleet");
@@ -172,16 +174,13 @@ public class CreateJPanel extends javax.swing.JPanel {
                             .addComponent(maintainanceExperiedJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(distanceJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-                                    .addComponent(availabilityJCheckBox)
-                                    .addComponent(manufacturedYearJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
-                                    .addComponent(manufacturerJComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(106, 106, 106))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(maintainanceJCheckBox)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(distanceJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                                .addComponent(availabilityJCheckBox)
+                                .addComponent(manufacturedYearJTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                                .addComponent(manufacturerJComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(maintainanceJCheckBox))
+                        .addGap(106, 106, 106)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addComponent(operatingCityJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
                             .addComponent(leaseTypeJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
