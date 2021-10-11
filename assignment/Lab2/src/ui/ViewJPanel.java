@@ -119,6 +119,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         countJLabel = new javax.swing.JLabel();
         countDataJLabel = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 204, 204));
+
         viewCarsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

@@ -43,6 +43,7 @@ public class HomeJFrame extends javax.swing.JFrame {
         createJButton = new javax.swing.JButton();
         viewJButton = new javax.swing.JButton();
         filterJButton = new javax.swing.JButton();
+        edaJButton = new javax.swing.JButton();
         viewJPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,16 +71,25 @@ public class HomeJFrame extends javax.swing.JFrame {
             }
         });
 
+        edaJButton.setText("EDA");
+        edaJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edaJButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout controlJPanelLayout = new javax.swing.GroupLayout(controlJPanel);
         controlJPanel.setLayout(controlJPanelLayout);
         controlJPanelLayout.setHorizontalGroup(
             controlJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlJPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(controlJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(createJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(viewJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(filterJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(controlJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(controlJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addComponent(createJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(viewJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(filterJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edaJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -94,7 +104,9 @@ public class HomeJFrame extends javax.swing.JFrame {
                 .addComponent(viewJButton)
                 .addGap(18, 18, 18)
                 .addComponent(filterJButton)
-                .addContainerGap(646, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(edaJButton)
+                .addContainerGap(599, Short.MAX_VALUE))
         );
 
         controlJPanelLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {createJButton, viewJButton});
@@ -146,6 +158,12 @@ public class HomeJFrame extends javax.swing.JFrame {
         homeSplitPane.setRightComponent(filterJpanel);
     }//GEN-LAST:event_filterJButtonActionPerformed
 
+    private void edaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edaJButtonActionPerformed
+        // TODO add your handling code here:
+        EdaJPanel edaPanel = new EdaJPanel(carsInformation);
+        homeSplitPane.setRightComponent(edaPanel);
+    }//GEN-LAST:event_edaJButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -184,6 +202,7 @@ public class HomeJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel controlJPanel;
     private javax.swing.JButton createJButton;
+    private javax.swing.JButton edaJButton;
     private javax.swing.JButton filterJButton;
     private javax.swing.JSplitPane homeSplitPane;
     private javax.swing.JButton viewJButton;

@@ -172,6 +172,8 @@ public class FilterJPanel extends javax.swing.JPanel {
         jCheckBoxMenuItem2.setSelected(true);
         jCheckBoxMenuItem2.setText("jCheckBoxMenuItem2");
 
+        setBackground(new java.awt.Color(0, 204, 204));
+
         filterHeaderDisplayJLabel.setFont(new java.awt.Font("Kokonor", 1, 18)); // NOI18N
         filterHeaderDisplayJLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         filterHeaderDisplayJLabel.setText("Filter data by using the Below fields");
