@@ -192,7 +192,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="manufacturedYearJTextField">
       <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="yyyy Format only"/>
+        <Property name="toolTipText" type="java.lang.String" value="yyyy Format only (1980+)"/>
       </Properties>
       <Events>
         <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="manufacturedYearJTextFieldKeyReleased"/>

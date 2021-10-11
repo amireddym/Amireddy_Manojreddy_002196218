@@ -1000,7 +1000,7 @@ public class FilterJPanel extends javax.swing.JPanel {
         }
         try{
             Integer seatCapacity = Integer.valueOf(seats);
-            if(Integer.compare(seatCapacity, 0) > 0){
+            if(Integer.compare(seatCapacity, 0) > 0 && Integer.compare(10,seatCapacity) > 0){
                 return true;
             }
             return false;
@@ -1017,7 +1017,7 @@ public class FilterJPanel extends javax.swing.JPanel {
         }
         try {
             Integer year = Integer.valueOf(manufacturedYr);
-            if(Integer.compare(year, 0) >0 && Integer.compare(2022, year) > 0){
+            if(Integer.compare(year, 1980) >0 && Integer.compare(2022, year) > 0){
                 return true;
             }
             return false;
@@ -1034,7 +1034,7 @@ public class FilterJPanel extends javax.swing.JPanel {
         }
         try {
             Integer year = Integer.valueOf(manufacturedYr);
-            if(Integer.compare(year, 0) >0 && Integer.compare(2022, year) > 0){
+            if(Integer.compare(year, 1980) >0 && Integer.compare(2022, year) > 0){
                 return true;
             }
             return false;
@@ -1052,7 +1052,7 @@ public class FilterJPanel extends javax.swing.JPanel {
         try {
             
             Integer year = Integer.valueOf(seatMin);
-            if(Integer.compare(year, 0) >=0 ){
+            if(Integer.compare(year, 0) >=0 && Integer.compare(10,year) >=0){
                 return true;
             }
             return false;
@@ -1071,7 +1071,7 @@ public class FilterJPanel extends javax.swing.JPanel {
         try {
             
             Integer year = Integer.valueOf(seatMax);
-            if(Integer.compare(year, 0) >=0 ){
+            if(Integer.compare(year, 0) >=0  && Integer.compare(10,year) >=0){
                 return true;
             }
             return false;

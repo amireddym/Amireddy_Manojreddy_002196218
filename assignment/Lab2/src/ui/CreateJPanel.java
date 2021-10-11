@@ -105,7 +105,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         manufacturedYearJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         manufacturedYearJLabel.setText("Manufactured Yr:");
 
-        manufacturedYearJTextField.setToolTipText("yyyy Format only");
+        manufacturedYearJTextField.setToolTipText("yyyy Format only (1980+)");
         manufacturedYearJTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 manufacturedYearJTextFieldKeyReleased(evt);
@@ -347,7 +347,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         }
         try {
             Integer year = Integer.valueOf(manufacturedYr);
-            if(Integer.compare(year, 0) >0 && Integer.compare(2022, year) > 0){
+            if(Integer.compare(year, 1980) >0 && Integer.compare(2022, year) > 0){
                 return true;
             }
             return false;
@@ -397,7 +397,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         }
         try{
             Integer seatCapacity = Integer.valueOf(seats);
-            if(Integer.compare(seatCapacity, 0) > 0){
+            if(Integer.compare(seatCapacity, 0) > 0 && Integer.compare(10,seatCapacity) > 0){
                 return true;
             }
             return false;
